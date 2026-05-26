@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tejas Patare | Portfolio</title>
-  <meta name="description" content="Premium personal portfolio for Tejas Patare, Full Stack Developer & MSc Computer Science student.">
+  <meta name="description"
+    content="Premium personal portfolio for Tejas Patare, Full Stack Developer & MSc Computer Science student.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     :root {
       --bg: #070b12;
@@ -354,17 +359,31 @@
       width: fit-content;
     }
 
-    .hero-copy > * {
+    .hero-copy>* {
       opacity: 0;
       transform: translateY(32px);
       animation: fadeUp 0.8s ease forwards;
     }
 
-    .hero-copy > :nth-child(1) { animation-delay: 0ms; }
-    .hero-copy > :nth-child(2) { animation-delay: 160ms; }
-    .hero-copy > :nth-child(3) { animation-delay: 320ms; }
-    .hero-copy > :nth-child(4) { animation-delay: 480ms; }
-    .hero-copy > :nth-child(5) { animation-delay: 640ms; }
+    .hero-copy> :nth-child(1) {
+      animation-delay: 0ms;
+    }
+
+    .hero-copy> :nth-child(2) {
+      animation-delay: 160ms;
+    }
+
+    .hero-copy> :nth-child(3) {
+      animation-delay: 320ms;
+    }
+
+    .hero-copy> :nth-child(4) {
+      animation-delay: 480ms;
+    }
+
+    .hero-copy> :nth-child(5) {
+      animation-delay: 640ms;
+    }
 
     .hero h1 {
       margin: 18px 0 12px;
@@ -573,12 +592,10 @@
       left: 0;
       z-index: 2;
       padding: 70px 22px 22px;
-      background: linear-gradient(
-        to top,
-        rgba(6, 11, 20, 0.92) 0%,
-        rgba(6, 11, 20, 0.58) 45%,
-        transparent 100%
-      );
+      background: linear-gradient(to top,
+          rgba(6, 11, 20, 0.92) 0%,
+          rgba(6, 11, 20, 0.58) 45%,
+          transparent 100%);
     }
 
     .profile-name {
@@ -878,7 +895,9 @@
     }
 
     /* Snapshot Card */
-    .snap-list { padding: 0 0 8px; }
+    .snap-list {
+      padding: 0 0 8px;
+    }
 
     .snap-item {
       display: flex;
@@ -888,7 +907,9 @@
       transition: background 0.2s ease;
     }
 
-    .snap-item:hover { background: rgba(255, 255, 255, 0.02); }
+    .snap-item:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
 
     .snap-item:not(:last-child) {
       border-bottom: 1px solid rgba(255, 255, 255, 0.035);
@@ -956,7 +977,9 @@
     }
 
     /* Experience Card */
-    .exp-body { padding: 0 24px 20px; }
+    .exp-body {
+      padding: 0 24px 20px;
+    }
 
     .exp-org {
       display: flex;
@@ -968,7 +991,10 @@
       font-weight: 600;
     }
 
-    .exp-org i { font-size: 0.7rem; opacity: 0.7; }
+    .exp-org i {
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
 
     .exp-desc {
       margin: 0 0 12px;
@@ -996,7 +1022,10 @@
       color: var(--muted);
     }
 
-    .exp-meta-tag i { font-size: 0.62rem; color: var(--accent); }
+    .exp-meta-tag i {
+      font-size: 0.62rem;
+      color: var(--accent);
+    }
 
     .exp-tech {
       display: flex;
@@ -1149,8 +1178,13 @@
       box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
     }
 
-    .journey-node:nth-child(odd):hover .journey-card { transform: translateX(-4px); }
-    .journey-node:nth-child(even):hover .journey-card { transform: translateX(4px); }
+    .journey-node:nth-child(odd):hover .journey-card {
+      transform: translateX(-4px);
+    }
+
+    .journey-node:nth-child(even):hover .journey-card {
+      transform: translateX(4px);
+    }
 
     .journey-year {
       font-family: "Space Grotesk", sans-serif;
@@ -1627,8 +1661,8 @@
 
     .music-player {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
+      right: 168px;
+      bottom: 28px;
       width: 68px;
       max-width: calc(100vw - 24px);
       border-radius: 22px;
@@ -1724,33 +1758,62 @@
     }
 
     @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
         transform: translate(-50%, 0);
       }
+
       40% {
         transform: translate(-50%, -10px);
       }
+
       60% {
         transform: translate(-50%, -5px);
       }
     }
 
     @keyframes drift {
-      from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(-40px, -60px, 0); }
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-40px, -60px, 0);
+      }
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.08); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
     }
 
     @keyframes floatOrb {
-      0%, 100% { transform: translate3d(0, 0, 0); }
-      50% { transform: translate3d(0, -20px, 0); }
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      50% {
+        transform: translate3d(0, -20px, 0);
+      }
     }
 
     @media (max-width: 960px) {
+
       .hero-layout,
       .contact-layout,
       .projects-grid,
@@ -1967,6 +2030,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       *,
       *::before,
       *::after {
@@ -1977,6 +2041,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
 
@@ -1996,7 +2061,8 @@
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+        aria-controls="mobileDrawer">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
@@ -2060,8 +2126,10 @@
         <!-- Left Column -->
         <div class="about-left">
           <span class="section-kicker"><i class="fa-solid fa-user"></i> About Me</span>
-          <h2>Building scalable web applications with <span class="heading-accent">clean design &amp; strong engineering.</span></h2>
-          <p class="about-bio">I'm Tejas Patare, a Full Stack Developer and MSc Computer Science student who enjoys building scalable, user-focused web applications with modern technologies and clean architecture.</p>
+          <h2>Building scalable web applications with <span class="heading-accent">clean design &amp; strong
+              engineering.</span></h2>
+          <p class="about-bio">I'm Tejas Patare, a Full Stack Developer and MSc Computer Science student who enjoys
+            building scalable, user-focused web applications with modern technologies and clean architecture.</p>
 
           <div class="about-highlights">
             <div class="hl-card">
@@ -2161,8 +2229,11 @@
               </div>
             </div>
             <div class="exp-body">
-              <div class="exp-org"><i class="fa-solid fa-building-columns"></i> Sudha Gopalakrishnan Brain Centre (SGBC), IIT Madras</div>
-              <p class="exp-desc">Worked on web applications and internal systems supporting neuroscience research. Collaborated with teams to build scalable tools, improve usability, and enhance frontend/backend integration.</p>
+              <div class="exp-org"><i class="fa-solid fa-building-columns"></i> Sudha Gopalakrishnan Brain Centre
+                (SGBC), IIT Madras</div>
+              <p class="exp-desc">Worked on web applications and internal systems supporting neuroscience research.
+                Collaborated with teams to build scalable tools, improve usability, and enhance frontend/backend
+                integration.</p>
               <div class="exp-meta">
                 <span class="exp-meta-tag"><i class="fa-solid fa-calendar"></i> Feb – Mar 2026</span>
                 <span class="exp-meta-tag"><i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu</span>
@@ -2198,7 +2269,8 @@
             <div class="journey-year">2019 – 2021</div>
             <h4>Higher Secondary (Science)</h4>
             <p class="journey-inst">R.B. Narayanrao Borawake College, Shrirampur</p>
-            <p>Built a strong foundation in mathematics, logic, and analytical thinking through rigorous science education.</p>
+            <p>Built a strong foundation in mathematics, logic, and analytical thinking through rigorous science
+              education.</p>
             <span class="journey-tag tag-edu">Education</span>
           </div>
         </div>
@@ -2231,7 +2303,8 @@
             <div class="journey-year">Jan – Feb 2025</div>
             <h4>Web Development Intern</h4>
             <p class="journey-inst">PharmaAI</p>
-            <p>First professional experience — contributed to web development projects and gained real-world engineering exposure.</p>
+            <p>First professional experience — contributed to web development projects and gained real-world engineering
+              exposure.</p>
             <span class="journey-tag tag-work">Experience</span>
           </div>
         </div>
@@ -2253,7 +2326,8 @@
             <div class="journey-year">Feb – Mar 2026</div>
             <h4>Full Stack Developer Intern</h4>
             <p class="journey-inst">SGBC, IIT Madras</p>
-            <p>Built production web applications for neuroscience research using Django, Vue.js, PostgreSQL and REST APIs.</p>
+            <p>Built production web applications for neuroscience research using Django, Vue.js, PostgreSQL and REST
+              APIs.</p>
             <span class="journey-tag tag-work">Experience</span>
           </div>
         </div>
@@ -2263,7 +2337,8 @@
           <div class="journey-card">
             <div class="journey-year">Next →</div>
             <h4>Building Impactful Software Products</h4>
-            <p>Seeking opportunities to build scalable, meaningful products that push the boundaries of modern web engineering.</p>
+            <p>Seeking opportunities to build scalable, meaningful products that push the boundaries of modern web
+              engineering.</p>
             <span class="journey-tag tag-goal">Goal</span>
           </div>
         </div>
@@ -2282,15 +2357,18 @@
           <div class="project-media" aria-hidden="true"></div>
           <div class="project-body">
             <h3>Orbit Commerce</h3>
-            <p>Multi-brand storefront experience with a modular content engine, polished interactions, and performance-first UI architecture.</p>
+            <p>Multi-brand storefront experience with a modular content engine, polished interactions, and
+              performance-first UI architecture.</p>
             <div class="tags">
               <span class="tag">Frontend</span>
               <span class="tag">E-commerce</span>
               <span class="tag">UI System</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
             </div>
           </div>
         </article>
@@ -2298,15 +2376,18 @@
           <div class="project-media" aria-hidden="true"></div>
           <div class="project-body">
             <h3>Pulse Analytics</h3>
-            <p>Dashboard redesign focused on faster insight scanning, chart clarity, and reusable component patterns for internal teams.</p>
+            <p>Dashboard redesign focused on faster insight scanning, chart clarity, and reusable component patterns for
+              internal teams.</p>
             <div class="tags">
               <span class="tag">Dashboard</span>
               <span class="tag">Data Viz</span>
               <span class="tag">Design</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
             </div>
           </div>
         </article>
@@ -2314,15 +2395,18 @@
           <div class="project-media" aria-hidden="true"></div>
           <div class="project-body">
             <h3>Northstar Studio</h3>
-            <p>Portfolio platform for a creative studio with immersive layouts, editorial typography, and a smooth mobile browsing flow.</p>
+            <p>Portfolio platform for a creative studio with immersive layouts, editorial typography, and a smooth
+              mobile browsing flow.</p>
             <div class="tags">
               <span class="tag">Brand</span>
               <span class="tag">Responsive</span>
               <span class="tag">Animation</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
             </div>
           </div>
         </article>
@@ -2330,15 +2414,18 @@
           <div class="project-media" aria-hidden="true"></div>
           <div class="project-body">
             <h3>Atlas Admin</h3>
-            <p>Operations workspace with permission-aware modules, fast navigation, and UI primitives aligned across product teams.</p>
+            <p>Operations workspace with permission-aware modules, fast navigation, and UI primitives aligned across
+              product teams.</p>
             <div class="tags">
               <span class="tag">Admin</span>
               <span class="tag">SaaS</span>
               <span class="tag">Scalability</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
             </div>
           </div>
         </article>
@@ -2346,15 +2433,18 @@
           <div class="project-media" aria-hidden="true"></div>
           <div class="project-body">
             <h3>Canvas Learn</h3>
-            <p>Learning product landing and course discovery flow optimized for conversion, readability, and brand consistency.</p>
+            <p>Learning product landing and course discovery flow optimized for conversion, readability, and brand
+              consistency.</p>
             <div class="tags">
               <span class="tag">EdTech</span>
               <span class="tag">UX</span>
               <span class="tag">Growth</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
             </div>
           </div>
         </article>
@@ -2362,15 +2452,18 @@
           <div class="project-media" aria-hidden="true"></div>
           <div class="project-body">
             <h3>Signal Notes</h3>
-            <p>Minimal productivity app concept with keyboard-first flows, thoughtful motion, and a restrained premium interface.</p>
+            <p>Minimal productivity app concept with keyboard-first flows, thoughtful motion, and a restrained premium
+              interface.</p>
             <div class="tags">
               <span class="tag">Productivity</span>
               <span class="tag">Prototype</span>
               <span class="tag">Interaction</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
             </div>
           </div>
         </article>
@@ -2390,37 +2483,43 @@
         <button class="filter-button" data-filter="design" type="button">Design</button>
       </div>
       <div class="certificates-grid" id="certificateGrid">
-        <article class="glass-card certificate-card" data-category="web-dev" data-title="Advanced JavaScript Patterns" data-issuer="Frontend Institute" data-year="2026">
+        <article class="glass-card certificate-card" data-category="web-dev" data-title="Advanced JavaScript Patterns"
+          data-issuer="Frontend Institute" data-year="2026">
           <div class="certificate-thumb"></div>
           <h3>Advanced JavaScript Patterns</h3>
           <p>Deep dive into modular architecture, browser behavior, and maintainable frontend structure.</p>
           <div class="certificate-meta"><span>Frontend Institute</span><span>2026</span></div>
         </article>
-        <article class="glass-card certificate-card" data-category="cloud" data-title="Cloud Foundations" data-issuer="Nimbus Academy" data-year="2025">
+        <article class="glass-card certificate-card" data-category="cloud" data-title="Cloud Foundations"
+          data-issuer="Nimbus Academy" data-year="2025">
           <div class="certificate-thumb"></div>
           <h3>Cloud Foundations</h3>
           <p>Core infrastructure, deployment concepts, and production-aware cloud workflows.</p>
           <div class="certificate-meta"><span>Nimbus Academy</span><span>2025</span></div>
         </article>
-        <article class="glass-card certificate-card" data-category="design" data-title="Interface Systems Mastery" data-issuer="Visual Craft Guild" data-year="2026">
+        <article class="glass-card certificate-card" data-category="design" data-title="Interface Systems Mastery"
+          data-issuer="Visual Craft Guild" data-year="2026">
           <div class="certificate-thumb"></div>
           <h3>Interface Systems Mastery</h3>
           <p>Systematic design principles for cohesive visual language and scalable components.</p>
           <div class="certificate-meta"><span>Visual Craft Guild</span><span>2026</span></div>
         </article>
-        <article class="glass-card certificate-card" data-category="web-dev" data-title="Accessible Web Engineering" data-issuer="Inclusive Web Lab" data-year="2024">
+        <article class="glass-card certificate-card" data-category="web-dev" data-title="Accessible Web Engineering"
+          data-issuer="Inclusive Web Lab" data-year="2024">
           <div class="certificate-thumb"></div>
           <h3>Accessible Web Engineering</h3>
           <p>Practical accessibility standards for modern products and inclusive interaction patterns.</p>
           <div class="certificate-meta"><span>Inclusive Web Lab</span><span>2024</span></div>
         </article>
-        <article class="glass-card certificate-card" data-category="cloud" data-title="Serverless Workflow Design" data-issuer="CloudStack School" data-year="2025">
+        <article class="glass-card certificate-card" data-category="cloud" data-title="Serverless Workflow Design"
+          data-issuer="CloudStack School" data-year="2025">
           <div class="certificate-thumb"></div>
           <h3>Serverless Workflow Design</h3>
           <p>Event-driven systems and lightweight service design for lean product delivery.</p>
           <div class="certificate-meta"><span>CloudStack School</span><span>2025</span></div>
         </article>
-        <article class="glass-card certificate-card" data-category="design" data-title="Motion for Product Interfaces" data-issuer="Studio Motion Arts" data-year="2024">
+        <article class="glass-card certificate-card" data-category="design" data-title="Motion for Product Interfaces"
+          data-issuer="Studio Motion Arts" data-year="2024">
           <div class="certificate-thumb"></div>
           <h3>Motion for Product Interfaces</h3>
           <p>Using animation to support clarity, hierarchy, and stronger user feedback loops.</p>
@@ -2432,8 +2531,10 @@
     <section class="reveal" id="resume">
       <div class="glass-card resume-cta">
         <h2>Want to work together?</h2>
-        <p>If you're building something ambitious and want clean execution across product, interface, and frontend craft, let's start a conversation.</p>
-        <button class="button" id="resumeButton" type="button"><i class="fa-solid fa-download"></i> Download Resume</button>
+        <p>If you're building something ambitious and want clean execution across product, interface, and frontend
+          craft, let's start a conversation.</p>
+        <button class="button" id="resumeButton" type="button"><i class="fa-solid fa-download"></i> Download
+          Resume</button>
         <div class="download-count" id="downloadCount">Downloaded 0 times</div>
       </div>
     </section>
@@ -2442,7 +2543,8 @@
       <div class="section-heading">
         <span class="section-kicker">Contact</span>
         <h2>Start a project, ask a question, or just say hello.</h2>
-        <p>This form is client-side only. It validates required fields, then shows a success state without sending data anywhere.</p>
+        <p>This form is client-side only. It validates required fields, then shows a success state without sending data
+          anywhere.</p>
       </div>
       <div class="contact-layout">
         <div class="glass-card contact-card">
@@ -2465,7 +2567,8 @@
         </div>
         <div class="glass-card contact-card">
           <h2>Connect</h2>
-          <p>Placeholder details: available for freelance collaborations, product design consulting, and frontend implementation work.</p>
+          <p>Placeholder details: available for freelance collaborations, product design consulting, and frontend
+            implementation work.</p>
           <div class="meta-list">
             <div class="meta-item">
               <span>Email</span>
@@ -2482,8 +2585,10 @@
           </div>
           <div class="socials">
             <a href="https://github.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i>
+              LinkedIn</a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i>
+              Twitter/X</a>
             <a href="mailto:alex@rivera.dev"><i class="fa-regular fa-envelope"></i> Email</a>
           </div>
         </div>
@@ -2516,11 +2621,64 @@
       <i class="fa-solid fa-chevron-up"></i>
     </button>
     <div class="music-content" id="musicContent">
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify playlist"></iframe>
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM3M?utm_source=generator&theme=0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+        title="Today's Top Hits - Spotify"></iframe>
     </div>
   </div>
 
-  <div class="toast" id="toast" aria-live="polite">Resume download started!</div>
+  <div class="modal" id="musicPromptModal" aria-hidden="true">
+    <div class="modal-card music-prompt-card">
+      <div class="music-prompt-icon">
+        <i class="fa-solid fa-headphones"></i>
+      </div>
+      <h3>Enhance your experience?</h3>
+      <p>Would you like to listen to some lo-fi music while exploring the portfolio?</p>
+      <div class="music-prompt-actions">
+        <button class="button" id="musicPromptYes">Yes, please</button>
+        <button class="ghost-button" id="musicPromptNo">Maybe later</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .music-prompt-card {
+      text-align: center;
+      max-width: 420px !important;
+      padding: 40px 32px !important;
+    }
+
+    .music-prompt-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(0, 245, 212, 0.1);
+      border: 1px solid rgba(0, 245, 212, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    .music-prompt-card h3 {
+      margin-bottom: 12px;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .music-prompt-card p {
+      color: var(--muted);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .music-prompt-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+  </style>
 
   <script>
     const nav = document.getElementById("navbar");
@@ -2766,9 +2924,476 @@ Placeholder resume content. Replace this file body with your real experience, pr
       setActiveLink();
     }, { passive: true });
 
+    const musicPromptModal = document.getElementById("musicPromptModal");
+    const musicPromptYes = document.getElementById("musicPromptYes");
+    const musicPromptNo = document.getElementById("musicPromptNo");
+
+    const showMusicPrompt = () => {
+      // Check if user has already made a choice in this or previous sessions
+      if (localStorage.getItem("hasSeenMusicPrompt") === "true") return;
+
+      setTimeout(() => {
+        musicPromptModal.classList.add("open");
+        musicPromptModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }, 1000);
+    };
+
+    const closeMusicPrompt = (startMusic = false) => {
+      musicPromptModal.classList.remove("open");
+      musicPromptModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      localStorage.setItem("hasSeenMusicPrompt", "true");
+
+      if (startMusic) {
+        const iframe = musicPlayer.querySelector("iframe");
+        if (iframe) {
+          const currentSrc = iframe.src;
+          // Spotify specific autoplay: append autoplay=1
+          iframe.src = currentSrc.includes("?") ? `${currentSrc}&autoplay=1` : `${currentSrc}?autoplay=1`;
+          musicPlayer.classList.add("open");
+          musicToggle.setAttribute("aria-expanded", "true");
+        }
+      }
+    };
+
+    musicPromptYes.addEventListener("click", () => closeMusicPrompt(true));
+    musicPromptNo.addEventListener("click", () => closeMusicPrompt(false));
+
+    showMusicPrompt();
+
     updateNavVisibility();
     setActiveLink();
     syncDownloadCount();
   </script>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+    .tp-terminal {
+      --tp-bg: rgba(28, 28, 30, 0.9);
+      --tp-titlebar: rgba(45, 45, 47, 0.98);
+      --tp-border: rgba(255, 255, 255, 0.12);
+      --tp-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+      --tp-text: #e1e1e3;
+      --tp-prompt: #4da5ff;
+      --tp-output: #b4b4b6;
+      --tp-success: #32d74b;
+      --tp-error: #ff453a;
+      --tp-easter: #bf5af2;
+      --tp-z: 99999;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .tp-terminal__toggle {
+      position: fixed;
+      right: 28px;
+      bottom: 28px;
+      z-index: var(--tp-z);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      height: 52px;
+      padding: 0 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      background: #1c1c1e;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .tp-terminal__toggle:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .mac-terminal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 560px;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--tp-bg);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid var(--tp-border);
+      box-shadow: var(--tp-shadow);
+      z-index: var(--tp-z);
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mac-terminal.is-open {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .mac-terminal.is-maximized {
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      max-height: 100vh !important;
+      transform: translate(0, 0) scale(1);
+      border-radius: 0;
+    }
+
+    .mac-terminal-header {
+      height: 38px;
+      flex-shrink: 0;
+      background: var(--tp-titlebar);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      cursor: grab;
+      user-select: none;
+    }
+
+    .mac-terminal.is-dragging .mac-terminal-header {
+      cursor: grabbing;
+    }
+
+    .mac-terminal-dots {
+      display: flex;
+      gap: 8px;
+      width: 52px;
+      flex-shrink: 0;
+    }
+
+    .mac-terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    .mac-terminal-dot.close { background: #ff5f57; }
+    .mac-terminal-dot.minimize { background: #febc2e; }
+    .mac-terminal-dot.maximize { background: #28c840; }
+
+    .mac-terminal-title {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      color: #8e8e93;
+      padding-right: 52px;
+      pointer-events: none;
+    }
+
+    .mac-terminal-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 16px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+    }
+
+    .mac-terminal-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .mac-terminal-content::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    #terminalHistory {
+      display: block;
+    }
+
+    .mac-terminal-input-line {
+      display: flex;
+      align-items: center;
+      margin-top: 4px;
+      padding-bottom: 8px;
+    }
+
+    .mac-terminal-prompt {
+      color: var(--tp-prompt);
+      font-weight: 600;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+
+    .mac-terminal-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--tp-text);
+      font-family: inherit;
+      font-size: 13px;
+      padding: 0;
+      caret-color: var(--tp-prompt);
+    }
+
+    .mac-terminal-line {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 2px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      color: var(--tp-output);
+      animation: tp-fade-in 0.1s ease-out forwards;
+    }
+    
+    .mac-terminal-line.prompt-line {
+      color: var(--tp-text);
+      display: flex;
+      gap: 8px;
+    }
+    
+    .mac-terminal-line.success { color: var(--tp-success); }
+    .mac-terminal-line.error { color: var(--tp-error); }
+    .mac-terminal-line.easter { color: var(--tp-easter); }
+
+    @keyframes tp-fade-in {
+      from { opacity: 0; transform: translateY(2px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+@media (max-width: 768px) {
+  .mac-terminal {
+    width: calc(100vw - 32px);
+    left: 16px;
+    top: 60px;
+    max-height: 80vh;
+    transform: translate(0, 0) scale(0.95);
+  }
+  .mac-terminal.is-open {
+    transform: translate(0, 0) scale(1);
+  }
+  .tp-terminal__toggle {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+</style>
+
+<div class="tp-terminal" id="tpTerminal">
+    <button class="tp-terminal__toggle" id="tpTerminalToggle" type="button" aria-expanded="false"
+      aria-controls="tpTerminalWindow">
+      <i class="fa-solid fa-terminal"></i>
+      <span>Terminal</span>
+    </button>
+
+    <div class="mac-terminal" id="macTerminalWindow">
+      <div class="mac-terminal-header" id="macTerminalHeader">
+        <div class="mac-terminal-dots">
+          <button class="mac-terminal-dot close" id="tpTerminalClose"></button>
+          <button class="mac-terminal-dot minimize" id="tpTerminalMinimize"></button>
+          <button class="mac-terminal-dot maximize" id="tpTerminalMaximize"></button>
+        </div>
+        <div class="mac-terminal-title">tejas@universe — zsh</div>
+      </div>
+
+      <div class="mac-terminal-content" id="terminalContent">
+        <div id="terminalHistory"></div>
+        <div class="mac-terminal-input-line">
+          <span class="mac-terminal-prompt">tejas@universe:~$</span>
+          <input type="text" class="mac-terminal-input" id="tpTerminalInput" spellcheck="false" autocomplete="off" autocapitalize="off" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const toggle = document.getElementById("tpTerminalToggle");
+      const windowEl = document.getElementById("macTerminalWindow");
+      const output = document.getElementById("terminalContent");
+      const transcript = document.getElementById("terminalHistory");
+      const input = document.getElementById("tpTerminalInput");
+      const titlebar = document.getElementById("macTerminalHeader");
+      const closeBtn = document.getElementById("tpTerminalClose");
+      const minBtn = document.getElementById("tpTerminalMinimize");
+      const maxBtn = document.getElementById("tpTerminalMaximize");
+
+      const state = {
+        isOpen: false,
+        isMaximized: false,
+        isMinimized: false,
+        history: [],
+        historyIdx: -1,
+        initialized: false
+      };
+
+      const commands = {
+        help: () => [
+          "Available commands:",
+          "  about      - learn more about me",
+          "  projects   - view my key works",
+          "  journey    - my academic & career path",
+          "  skills     - technical stack",
+          "  resume     - download my CV",
+          "  contact    - get in touch",
+          "  clear      - clear terminal screen"
+        ],
+        about: () => [
+          "Tejas Patare — Full Stack Developer & Data Science Student.",
+          "Building high-performance web systems and exploring the intersection of design and data.",
+          "Currently pursuing MSc CS at Fergusson College and BS Data Science at IIT Madras."
+        ],
+        projects: () => [
+          "1. NeuroStack Portal - Full-stack research tools",
+          "2. PharmaAI Suite - Domain-specific web interfaces",
+          "3. Orbit Commerce - Performance-first storefront",
+          "4. Pulse Analytics - Data-driven dashboard"
+        ],
+        journey: () => [
+          "2025 - Present: MSc Computer Science, Fergusson College",
+          "2022 - 2027: BS Data Science, IIT Madras",
+          "2021 - 2025: BSc Computer Science, SPPU",
+          "2019 - 2021: HSC Science, RBNB College"
+        ],
+        skills: () => [
+          "Frontend: React, TypeScript, Next.js, Vanilla CSS",
+          "Backend: Node.js, Express, Python, FastAPI",
+          "Data: SQL, Pandas, NumPy, Scikit-learn",
+          "Tools: Git, Docker, AWS, Linux"
+        ],
+        resume: () => {
+          window.open("/resume.pdf", "_blank");
+          return ["Opening resume.pdf..."];
+        },
+        contact: () => [
+          "Email: tejaspatare@email.com",
+          "GitHub: github.com/tejaspatare",
+          "LinkedIn: linkedin.com/in/tejaspatare"
+        ],
+        clear: () => {
+          transcript.innerHTML = "";
+          return [];
+        }
+      };
+
+      const addLine = (text, type = "output") => {
+        const line = document.createElement("div");
+        line.className = `mac-terminal-line ${type === "prompt" ? "prompt-line" : type}`;
+        if (type === "prompt") {
+          line.innerHTML = `<span class="mac-terminal-prompt">tejas@universe:~$</span> <span>${text}</span>`;
+        } else {
+          line.textContent = text;
+        }
+        transcript.appendChild(line);
+        output.scrollTop = output.scrollHeight;
+      };
+
+      const processCommand = async (cmd) => {
+        const cleanCmd = cmd.trim().toLowerCase();
+        addLine(cmd, "prompt");
+
+        if (cleanCmd) {
+          state.history.push(cmd);
+          state.historyIdx = state.history.length;
+
+          if (commands[cleanCmd]) {
+            const output = commands[cleanCmd]();
+            output.forEach(line => addLine(line));
+          } else {
+            addLine(`zsh: command not found: ${cmd}`, "error");
+          }
+        }
+      };
+
+      const toggleTerminal = (force) => {
+        state.isOpen = force !== undefined ? force : !state.isOpen;
+        windowEl.classList.toggle("is-open", state.isOpen);
+        toggle.setAttribute("aria-expanded", state.isOpen);
+        if (state.isOpen) {
+          if (!state.initialized) {
+            addLine("Welcome to Tejas's Universe v1.0", "success");
+            addLine("Type 'help' to see available commands.");
+            state.initialized = true;
+          }
+          setTimeout(() => input.focus(), 100);
+        }
+      };
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const cmd = input.value;
+          input.value = "";
+          processCommand(cmd);
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          if (state.historyIdx > 0) {
+            state.historyIdx--;
+            input.value = state.history[state.historyIdx];
+          }
+        } else if (e.key === "ArrowDown") {
+          e.preventDefault();
+          if (state.historyIdx < state.history.length - 1) {
+            state.historyIdx++;
+            input.value = state.history[state.historyIdx];
+          } else {
+            state.historyIdx = state.history.length;
+            input.value = "";
+          }
+        }
+      });
+
+      // Dragging Logic
+      let isDragging = false;
+      let startX, startY, startLeft, startTop;
+
+      titlebar.addEventListener("mousedown", (e) => {
+        if (e.target.closest(".tp-terminal__controls")) return;
+        isDragging = true;
+        windowEl.classList.add("is-dragging");
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = windowEl.getBoundingClientRect();
+        startLeft = rect.left;
+        startTop = rect.top;
+
+        const onMouseMove = (e) => {
+          if (!isDragging) return;
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+          windowEl.style.left = `${startLeft + dx}px`;
+          windowEl.style.top = `${startTop + dy}px`;
+          windowEl.style.right = "auto";
+        };
+
+        const onMouseUp = () => {
+          isDragging = false;
+          windowEl.classList.remove("is-dragging");
+          document.removeEventListener("mousemove", onMouseMove);
+          document.removeEventListener("mouseup", onMouseUp);
+        };
+
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
+      });
+
+      toggle.addEventListener("click", () => toggleTerminal());
+      closeBtn.addEventListener("click", () => toggleTerminal(false));
+      maxBtn.addEventListener("click", () => {
+        state.isMaximized = !state.isMaximized;
+        windowEl.classList.toggle("is-maximized", state.isMaximized);
+      });
+      minBtn.addEventListener("click", () => toggleTerminal(false));
+
+      windowEl.addEventListener("click", () => input.focus());
+    })();
+  </script>
 </body>
+
 </html>
