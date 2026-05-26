@@ -2793,30 +2793,19 @@
       downloadCount.textContent = `Downloaded ${count} ${count === 1 ? "time" : "times"}`;
     };
 
-    const resumeContent = `Alex Rivera Resume
 
-Role: Full Stack Developer & UI Designer
-Location: Mumbai, India
-Website: Portfolio Placeholder
-
-Summary:
-Placeholder resume content. Replace this file body with your real experience, projects, and education.
-`;
 
     resumeButton.addEventListener("click", () => {
       const nextCount = Number(localStorage.getItem(resumeStorageKey) || 0) + 1;
       localStorage.setItem(resumeStorageKey, String(nextCount));
       syncDownloadCount();
 
-      const blob = new Blob([resumeContent], { type: "text/plain;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
-      link.href = url;
-      link.download = "Alex-Rivera-Resume.txt";
+      link.href = "Tejas Patare - 22f1001500 - IITM BS.pdf";
+      link.download = "Tejas_Patare_Resume.pdf";
       document.body.appendChild(link);
       link.click();
       link.remove();
-      URL.revokeObjectURL(url);
 
       toastMessage("Resume download started!");
     });
@@ -3236,12 +3225,12 @@ Placeholder resume content. Replace this file body with your real experience, pr
           "Tools: Git, Docker, AWS, Linux"
         ],
         resume: () => {
-          window.open("/resume.pdf", "_blank");
-          return ["Opening resume.pdf..."];
+          window.open("Tejas%20Patare%20-%2022f1001500%20-%20IITM%20BS.pdf", "_blank");
+          return ["Opening resume..."];
         },
         contact: () => [
-          "Email: tejaspatare@email.com",
-          "GitHub: github.com/tejaspatare",
+          "Email: pataretejas1885@email.com",
+          "GitHub: github.com/tejas-34",
           "LinkedIn: linkedin.com/in/tejaspatare"
         ],
         clear: () => {
