@@ -1723,12 +1723,13 @@
       max-height: 120px;
     }
 
-    .music-content iframe {
+    .music-content audio {
       width: 100%;
-      height: 80px;
+      height: 60px;
       border: 0;
       display: block;
       border-radius: 0 0 18px 18px;
+      padding: 0 8px 8px 8px;
     }
 
     .reveal {
@@ -2621,9 +2622,7 @@
       <i class="fa-solid fa-chevron-up"></i>
     </button>
     <div class="music-content" id="musicContent">
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM3M?utm_source=generator&theme=0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
-        title="Today's Top Hits - Spotify"></iframe>
+      <audio id="bgMusic" src="paulyudin-minimal-tech-151890.mp3" controls loop></audio>
     </div>
   </div>
 
@@ -2946,11 +2945,9 @@ Placeholder resume content. Replace this file body with your real experience, pr
       localStorage.setItem("hasSeenMusicPrompt", "true");
 
       if (startMusic) {
-        const iframe = musicPlayer.querySelector("iframe");
-        if (iframe) {
-          const currentSrc = iframe.src;
-          // Spotify specific autoplay: append autoplay=1
-          iframe.src = currentSrc.includes("?") ? `${currentSrc}&autoplay=1` : `${currentSrc}?autoplay=1`;
+        const audio = musicPlayer.querySelector("audio");
+        if (audio) {
+          audio.play().catch(e => console.log("Audio autoplay was prevented:", e));
           musicPlayer.classList.add("open");
           musicToggle.setAttribute("aria-expanded", "true");
         }
