@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -138,12 +138,12 @@
 
     .site-nav {
       position: fixed;
-      top: 12px;
+      top: 16px;
       left: 50%;
-      width: min(1120px, calc(100% - 32px));
       transform: translate(-50%, -140%);
+      width: min(1160px, calc(100% - 32px));
       opacity: 0;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
       z-index: 100;
     }
 
@@ -157,12 +157,12 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 14px 20px;
+      padding: 12px 36px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(7, 11, 18, 0.62);
-      backdrop-filter: blur(22px);
+      background: rgba(7, 11, 18, 0.76);
+      backdrop-filter: blur(20px);
       border-radius: 999px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.26);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
     }
 
     .brand {
@@ -172,6 +172,25 @@
       font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
       letter-spacing: -0.02em;
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .brand-subtitle {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.01em;
     }
 
     .brand-badge {
@@ -196,10 +215,16 @@
       border-radius: 999px;
     }
 
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 4px;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -207,17 +232,64 @@
 
     .nav-link {
       position: relative;
-      padding: 10px 14px;
-      border-radius: 999px;
+      padding: 10px 16px;
+      border-radius: 0;
       color: var(--muted);
-      transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
-    .nav-link:hover,
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
     .nav-link.active {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.06);
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-link.active::after {
+      width: 24px;
+    }
+
+    .nav-resume-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 245, 212, 0.3);
+      background: rgba(0, 245, 212, 0.08);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-resume-btn:hover {
+      background: rgba(0, 245, 212, 0.15);
+      border-color: rgba(0, 245, 212, 0.45);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 245, 212, 0.12);
+    }
+
+    .nav-resume-btn i {
+      font-size: 0.8rem;
     }
 
     .hamburger {
@@ -424,6 +496,35 @@
       flex-wrap: wrap;
       gap: 16px;
       margin-top: 2.4rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .hero-stats-row {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-stat strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-stat span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
     }
 
     .button,
@@ -668,21 +769,63 @@
     .scroll-indicator {
       position: absolute;
       left: 50%;
-      bottom: 110px;
+      bottom: 60px;
       transform: translateX(-50%);
       display: inline-flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      animation: bounce 2.2s ease infinite;
+      gap: 6px;
+      color: #fff;
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
     }
 
-    .scroll-indicator i {
-      color: var(--accent);
+    .scroll-indicator:hover {
+      opacity: 1;
+    }
+
+    .scroll-indicator .scroll-line {
+      width: 1px;
+      height: 16px;
+      background: var(--accent);
+    }
+
+    .scroll-indicator .scroll-mouse {
+      width: 14px;
+      height: 22px;
+      border: 1.5px solid var(--accent);
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 0 8px rgba(0, 245, 212, 0.3);
+    }
+
+    .scroll-indicator .scroll-mouse::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      animation: scrollMouse 1.5s infinite;
+    }
+
+    @keyframes scrollMouse {
+      0% {
+        top: 3px;
+        opacity: 1;
+      }
+
+      100% {
+        top: 10px;
+        opacity: 0;
+      }
     }
 
     .section-heading {
@@ -711,7 +854,122 @@
     #about {
       position: relative;
       overflow: visible;
+      padding: 100px 0 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
     }
+
+    /* Centered container */
+    .about-center {
+      position: relative;
+      z-index: 1;
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Kicker label */
+    .about-kicker {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: rgba(200, 212, 236, 0.45);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    /* Big serif display heading */
+    .about-display-heading {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.9rem, 3.8vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin: 0 0 28px;
+    }
+
+    /* Third line — matches heading size */
+    .about-display-sub {
+      display: block;
+      font-size: clamp(1.9rem, 3.8vw, 2.4rem);
+      font-weight: 700;
+      color: var(--fg);
+    }
+
+    /* "meaningful things." — italic, theme accent gradient */
+    .about-display-em {
+      font-style: italic;
+      background: linear-gradient(135deg, #00f5d4 0%, #9b72ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Body paragraphs wrapper */
+    .about-body-text {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .about-body-text p {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.68;
+      color: rgba(200, 212, 236, 0.75);
+      margin: 0;
+      max-width: 520px;
+    }
+
+    /* Bold belief line */
+    .about-belief strong {
+      color: rgba(239, 244, 255, 0.88);
+      font-weight: 700;
+    }
+
+    /* Social icon buttons row */
+    .about-socials-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .about-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(200, 212, 236, 0.55);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .about-icon-btn:hover {
+      color: var(--accent);
+      border-color: rgba(0, 245, 212, 0.3);
+      background: rgba(0, 245, 212, 0.07);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 245, 212, 0.12);
+    }
+
 
     .about-orb {
       position: absolute;
@@ -747,6 +1005,462 @@
       background-clip: text;
     }
 
+    .text-gradient-cyan {
+      background: linear-gradient(135deg, #00f5d4 0%, #00bbf9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+    }
+
+    .text-gradient-purple {
+      background: linear-gradient(135deg, #00bbf9 0%, #9b72ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+    }
+
+    .kicker-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* About Connect Button & Socials Row */
+    .about-connect-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .about-connect-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #8efdef);
+      color: #041414;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 12px 32px rgba(0, 245, 212, 0.2);
+    }
+
+    .about-connect-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(0, 245, 212, 0.28);
+    }
+
+    .about-connect-btn i {
+      transition: transform 0.3s ease;
+    }
+
+    .about-connect-btn:hover i {
+      transform: translateX(4px);
+    }
+
+    .about-social-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .about-social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .about-social-icon:hover {
+      color: var(--accent);
+      border-color: rgba(0, 245, 212, 0.25);
+      background: rgba(0, 245, 212, 0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 245, 212, 0.1);
+    }
+
+    /* Laptop Mockup */
+    .about-laptop-scene {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      perspective: 1200px;
+    }
+
+    .laptop-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .laptop-screen {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: linear-gradient(135deg, #0d1321 0%, #131b2e 40%, #0a1020 100%);
+      border-radius: 12px 12px 0 0;
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      border-bottom: none;
+      overflow: hidden;
+      box-shadow: 0 -4px 40px rgba(0, 245, 212, 0.06), inset 0 0 60px rgba(0, 245, 212, 0.03);
+    }
+
+    .laptop-code {
+      padding: 16px 20px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.68rem;
+      line-height: 1.8;
+      color: rgba(180, 200, 230, 0.5);
+    }
+
+    .laptop-code .code-line {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .laptop-code .code-keyword {
+      color: #c792ea;
+    }
+
+    .laptop-code .code-func {
+      color: #82aaff;
+    }
+
+    .laptop-code .code-string {
+      color: #c3e88d;
+    }
+
+    .laptop-code .code-comment {
+      color: rgba(140, 160, 190, 0.4);
+      font-style: italic;
+    }
+
+    .laptop-code .code-bracket {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .laptop-code .code-var {
+      color: #f07178;
+    }
+
+    .laptop-code .code-num {
+      color: #f78c6c;
+    }
+
+    .laptop-base {
+      width: 110%;
+      margin-left: -5%;
+      height: 14px;
+      background: linear-gradient(180deg, rgba(30, 40, 60, 0.9), rgba(20, 28, 44, 0.95));
+      border-radius: 0 0 8px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .laptop-base::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Floating Tech Icons */
+    .floating-icons {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .float-icon {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(12, 18, 32, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      font-size: 1.2rem;
+      animation: floatIcon 6s ease-in-out infinite;
+    }
+
+    .float-icon.react {
+      top: -24px;
+      left: 20%;
+      color: #61dafb;
+      animation-delay: 0s;
+    }
+
+    .float-icon.js {
+      top: 25%;
+      left: -28px;
+      color: #f7df1e;
+      animation-delay: 0.5s;
+    }
+
+    .float-icon.python {
+      bottom: 20%;
+      left: -20px;
+      color: #3776ab;
+      animation-delay: 1.5s;
+    }
+
+    .float-icon.postgres {
+      top: 15%;
+      right: -28px;
+      color: #336791;
+      animation-delay: 1s;
+    }
+
+    .float-icon.mongo {
+      bottom: 10%;
+      right: -22px;
+      color: #47a248;
+      animation-delay: 2s;
+    }
+
+    @keyframes floatIcon {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* At a Glance Card (overlapping laptop) */
+    .at-a-glance-card {
+      position: absolute;
+      right: -20px;
+      top: 18%;
+      width: 220px;
+      background: rgba(12, 18, 32, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      z-index: 5;
+      overflow: hidden;
+    }
+
+    .glance-header {
+      padding: 12px 14px 6px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .glance-list {
+      padding: 0 0 8px;
+    }
+
+    .glance-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px;
+    }
+
+    .glance-item:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .glance-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      font-size: 0.72rem;
+    }
+
+    .glance-icon.red {
+      background: rgba(255, 82, 82, 0.12);
+      color: #ff5252;
+    }
+
+    .glance-icon.cyan {
+      background: rgba(0, 245, 212, 0.1);
+      color: var(--accent);
+    }
+
+    .glance-icon.blue {
+      background: rgba(66, 133, 244, 0.12);
+      color: #4285f4;
+    }
+
+    .glance-icon.purple {
+      background: rgba(155, 114, 255, 0.12);
+      color: var(--accent-2);
+    }
+
+    .glance-icon.orange {
+      background: rgba(255, 152, 0, 0.12);
+      color: #ff9800;
+    }
+
+    .glance-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .glance-text span {
+      font-size: 0.62rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .glance-text strong {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(240, 244, 255, 0.88);
+      letter-spacing: -0.01em;
+    }
+
+    /* What I Do Section */
+    .what-i-do {
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .what-i-do-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(0, 245, 212, 0.16);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .what-i-do-header .kicker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+    }
+
+    .what-i-do-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .wid-card {
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(14, 21, 36, 0.65), rgba(9, 14, 26, 0.5));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+      cursor: default;
+    }
+
+    .wid-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 245, 212, 0.14);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24), 0 0 30px rgba(0, 245, 212, 0.04);
+    }
+
+    .wid-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .wid-icon.teal {
+      background: rgba(0, 245, 212, 0.1);
+      border: 1px solid rgba(0, 245, 212, 0.15);
+      color: var(--accent);
+    }
+
+    .wid-icon.blue {
+      background: rgba(66, 133, 244, 0.1);
+      border: 1px solid rgba(66, 133, 244, 0.15);
+      color: #4285f4;
+    }
+
+    .wid-icon.purple {
+      background: rgba(155, 114, 255, 0.1);
+      border: 1px solid rgba(155, 114, 255, 0.15);
+      color: var(--accent-2);
+    }
+
+    .wid-icon.pink {
+      background: rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(236, 72, 153, 0.15);
+      color: #ec4899;
+    }
+
+    .wid-card h4 {
+      margin: 0 0 8px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .wid-card p {
+      margin: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     /* About 2-column layout */
     .about-layout {
       display: grid;
@@ -761,7 +1475,7 @@
     .about-left {
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 16px;
     }
 
     .about-left .section-kicker {
@@ -771,18 +1485,41 @@
     .about-left h2 {
       margin: 0;
       font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
-      line-height: 1.1;
-      letter-spacing: -0.045em;
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
       max-width: 580px;
     }
 
     .about-bio {
       margin: 0;
-      font-size: 1.02rem;
-      line-height: 1.9;
+      font-size: 0.94rem;
+      line-height: 1.6;
       color: rgba(200, 212, 236, 0.65);
       max-width: 540px;
+    }
+
+    .about-bio--secondary {
+      color: rgba(200, 212, 236, 0.5);
+      font-size: 0.91rem;
+    }
+
+    .about-bio--belief {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(200, 212, 236, 0.75);
+      border-left: 2px solid var(--accent);
+      padding-left: 14px;
+      margin-top: 4px;
+    }
+
+    .about-h2-sub {
+      display: block;
+      font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-top: 4px;
+      color: rgba(239, 244, 255, 0.8);
     }
 
     /* Mini highlight cards */
@@ -1092,178 +1829,494 @@
     /* ── Journey Section ── */
     #journey {
       position: relative;
-      overflow: hidden;
+      overflow: visible;
+      padding: 80px 0;
     }
 
-    #journey .section-heading {
+    .journey-hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .journey-hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(200, 212, 236, 0.65);
+      margin: 16px 0 32px;
+      max-width: 560px;
+    }
+
+    /* Stats Grid */
+    .journey-stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 540px;
+    }
+
+    .j-stat-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(14, 21, 36, 0.65), rgba(9, 14, 26, 0.5));
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .j-stat-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .j-stat-icon.cyan {
+      background: rgba(0, 245, 212, 0.1);
+      color: var(--accent);
+    }
+
+    .j-stat-icon.green {
+      background: rgba(71, 162, 72, 0.12);
+      color: #42b883;
+    }
+
+    .j-stat-icon.purple {
+      background: rgba(155, 114, 255, 0.1);
+      color: var(--accent-2);
+    }
+
+    .j-stat-icon.indigo {
+      background: rgba(54, 92, 220, 0.12);
+      color: #82aaff;
+    }
+
+    .j-stat-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .j-stat-text strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .j-stat-text span {
+      font-size: 0.76rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Glowing curved road */
+    .glowing-road-container {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      animation: floatRoad 6s ease-in-out infinite;
+    }
+
+    @keyframes floatRoad {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .road-pin {
+      animation: pulsePin 2.5s infinite alternate;
+    }
+
+    @keyframes pulsePin {
+      0% {
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+      }
+
+      100% {
+        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+      }
+    }
+
+    /* Timeline Title */
+    .journey-title-block {
       margin-bottom: 48px;
     }
 
-    .journey-track {
+    .journey-title-block h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .j-title-bar {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      box-shadow: 0 0 8px rgba(0, 245, 212, 0.4);
+    }
+
+    /* Timeline spine & container */
+    .timeline-container {
       position: relative;
       max-width: 880px;
       margin: 0 auto;
+      padding-left: 140px;
+      /* Space for the left node text column */
+      box-sizing: border-box;
     }
 
-    .journey-line {
+    .timeline-spine {
       position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
+      left: 170px;
+      /* Enters right in the middle of spine column */
+      top: 24px;
+      bottom: 24px;
       width: 2px;
-      transform: translateX(-50%);
-      background: linear-gradient(180deg, rgba(0, 245, 212, 0.35), rgba(155, 114, 255, 0.35), rgba(0, 245, 212, 0.12));
+      background: linear-gradient(180deg, rgba(0, 245, 212, 0.4), rgba(155, 114, 255, 0.4), rgba(245, 197, 66, 0.15));
       border-radius: 999px;
+      z-index: 1;
     }
 
-    .journey-line::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -4px;
-      width: 10px;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(0, 245, 212, 0.06), rgba(155, 114, 255, 0.05), transparent);
-      filter: blur(5px);
-    }
-
-    .journey-node {
+    .timeline-item {
       position: relative;
       display: flex;
-      align-items: flex-start;
-      gap: 28px;
-      padding: 14px 0;
+      gap: 40px;
+      margin-bottom: 24px;
     }
 
-    .journey-node:nth-child(odd) {
-      flex-direction: row;
-      padding-right: calc(50% + 28px);
-    }
-
-    .journey-node:nth-child(even) {
-      flex-direction: row-reverse;
-      padding-left: calc(50% + 28px);
-    }
-
-    .journey-dot {
+    /* Left Icon Column */
+    .timeline-left {
       position: absolute;
-      left: 50%;
-      top: 22px;
-      width: 14px;
-      height: 14px;
+      left: -140px;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .node-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      background: var(--accent);
-      border: 3px solid rgba(7, 11, 18, 0.95);
-      box-shadow: 0 0 14px rgba(0, 245, 212, 0.35), 0 0 5px rgba(0, 245, 212, 0.6);
-      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+      transition: all 0.3s ease;
+    }
+
+    .node-keyword {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    /* Timeline Dots column */
+    .timeline-dot-container {
+      position: relative;
+      width: 60px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
       z-index: 2;
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--text);
+      border: 3.5px solid #070b12;
+      margin-top: 24px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .journey-node:hover .journey-dot {
-      transform: translateX(-50%) scale(1.4);
-      box-shadow: 0 0 22px rgba(0, 245, 212, 0.5), 0 0 8px rgba(0, 245, 212, 0.8);
-    }
-
-    .journey-dot.purple {
-      background: var(--accent-2);
-      box-shadow: 0 0 14px rgba(155, 114, 255, 0.35), 0 0 5px rgba(155, 114, 255, 0.6);
-    }
-
-    .journey-node:hover .journey-dot.purple {
-      box-shadow: 0 0 22px rgba(155, 114, 255, 0.5), 0 0 8px rgba(155, 114, 255, 0.8);
-    }
-
-    .journey-dot.gold {
-      background: #f5c542;
-      box-shadow: 0 0 14px rgba(245, 197, 66, 0.35), 0 0 5px rgba(245, 197, 66, 0.6);
-    }
-
-    .journey-node:hover .journey-dot.gold {
-      box-shadow: 0 0 22px rgba(245, 197, 66, 0.5), 0 0 8px rgba(245, 197, 66, 0.8);
-    }
-
-    .journey-card {
+    /* Glassmorphic timeline cards on the right */
+    .timeline-card {
       flex: 1;
-      padding: 20px 22px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 24px;
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(14, 21, 36, 0.65), rgba(9, 14, 26, 0.5));
+      background: linear-gradient(135deg, rgba(14, 21, 36, 0.7), rgba(9, 14, 26, 0.52));
       border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(14px);
+      transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
     }
 
-    .journey-node:hover .journey-card {
-      border-color: rgba(0, 245, 212, 0.12);
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+    .card-glow-edge {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
+      transition: width 0.3s ease;
     }
 
-    .journey-node:nth-child(odd):hover .journey-card {
-      transform: translateX(-4px);
-    }
-
-    .journey-node:nth-child(even):hover .journey-card {
-      transform: translateX(4px);
-    }
-
-    .journey-year {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.76rem;
-      font-weight: 700;
+    /* Colors and states mapping */
+    .timeline-item.cyan-theme .node-icon {
       color: var(--accent);
-      letter-spacing: 0.02em;
-      margin-bottom: 6px;
+      border-color: rgba(0, 245, 212, 0.2);
     }
 
-    .journey-card h4 {
-      margin: 0 0 4px;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: rgba(240, 244, 255, 0.92);
-      letter-spacing: -0.01em;
+    .timeline-item.cyan-theme .node-keyword {
+      color: var(--accent);
     }
 
-    .journey-card .journey-inst {
-      margin: 0 0 4px;
-      font-size: 0.78rem;
-      color: rgba(200, 212, 236, 0.55);
-      font-style: italic;
+    .timeline-item.cyan-theme .timeline-dot {
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 245, 212, 0.3);
     }
 
-    .journey-card p {
-      margin: 0;
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.6;
+    .timeline-item.cyan-theme .card-glow-edge {
+      background: var(--accent);
     }
 
-    .journey-card .journey-tag {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    .journey-tag.tag-edu {
-      background: rgba(155, 114, 255, 0.1);
-      border: 1px solid rgba(155, 114, 255, 0.18);
-      color: #c9b8ff;
-    }
-
-    .journey-tag.tag-work {
+    .timeline-item.cyan-theme .card-tag {
       background: rgba(0, 245, 212, 0.08);
       border: 1px solid rgba(0, 245, 212, 0.16);
       color: var(--accent);
     }
 
-    .journey-tag.tag-goal {
-      background: rgba(245, 197, 66, 0.08);
-      border: 1px solid rgba(245, 197, 66, 0.18);
+    .timeline-item.purple-theme .node-icon {
+      color: var(--accent-2);
+      border-color: rgba(155, 114, 255, 0.2);
+    }
+
+    .timeline-item.purple-theme .node-keyword {
+      color: var(--accent-2);
+    }
+
+    .timeline-item.purple-theme .timeline-dot {
+      background: var(--accent-2);
+      box-shadow: 0 0 10px rgba(155, 114, 255, 0.3);
+    }
+
+    .timeline-item.purple-theme .card-glow-edge {
+      background: var(--accent-2);
+    }
+
+    .timeline-item.purple-theme .card-tag {
+      background: rgba(155, 114, 255, 0.08);
+      border: 1px solid rgba(155, 114, 255, 0.16);
+      color: #c9b8ff;
+    }
+
+    .timeline-item.blue-theme .node-icon {
+      color: #00bbf9;
+      border-color: rgba(0, 187, 249, 0.2);
+    }
+
+    .timeline-item.blue-theme .node-keyword {
+      color: #00bbf9;
+    }
+
+    .timeline-item.blue-theme .timeline-dot {
+      background: #00bbf9;
+      box-shadow: 0 0 10px rgba(0, 187, 249, 0.3);
+    }
+
+    .timeline-item.blue-theme .card-glow-edge {
+      background: #00bbf9;
+    }
+
+    .timeline-item.blue-theme .card-tag {
+      background: rgba(0, 187, 249, 0.08);
+      border: 1px solid rgba(0, 187, 249, 0.16);
+      color: #00bbf9;
+    }
+
+    .timeline-item.green-theme .node-icon {
+      color: #42b883;
+      border-color: rgba(66, 184, 131, 0.2);
+    }
+
+    .timeline-item.green-theme .node-keyword {
+      color: #42b883;
+    }
+
+    .timeline-item.green-theme .timeline-dot {
+      background: #42b883;
+      box-shadow: 0 0 10px rgba(66, 184, 131, 0.3);
+    }
+
+    .timeline-item.green-theme .card-glow-edge {
+      background: #42b883;
+    }
+
+    .timeline-item.green-theme .card-tag {
+      background: rgba(66, 184, 131, 0.08);
+      border: 1px solid rgba(66, 184, 131, 0.16);
+      color: #42b883;
+    }
+
+    .timeline-item.orange-theme .node-icon {
+      color: #ff9800;
+      border-color: rgba(255, 152, 0, 0.2);
+    }
+
+    .timeline-item.orange-theme .node-keyword {
+      color: #ff9800;
+    }
+
+    .timeline-item.orange-theme .timeline-dot {
+      background: #ff9800;
+      box-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
+    }
+
+    .timeline-item.orange-theme .card-glow-edge {
+      background: #ff9800;
+    }
+
+    .timeline-item.orange-theme .card-tag {
+      background: rgba(255, 152, 0, 0.08);
+      border: 1px solid rgba(255, 152, 0, 0.16);
+      color: #ff9800;
+    }
+
+    .timeline-item.gold-theme .node-icon {
       color: #f5c542;
+      border-color: rgba(245, 197, 66, 0.2);
+    }
+
+    .timeline-item.gold-theme .node-keyword {
+      color: #f5c542;
+    }
+
+    .timeline-item.gold-theme .timeline-dot {
+      background: #f5c542;
+      box-shadow: 0 0 10px rgba(245, 197, 66, 0.3);
+    }
+
+    .timeline-item.gold-theme .card-glow-edge {
+      background: #f5c542;
+    }
+
+    .timeline-item.gold-theme .card-tag {
+      background: rgba(245, 197, 66, 0.08);
+      border: 1px solid rgba(245, 197, 66, 0.16);
+      color: #f5c542;
+    }
+
+    /* Interaction states */
+    .timeline-item:hover .node-icon {
+      transform: scale(1.15);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.4);
+      box-shadow: 0 0 16px currentColor;
+    }
+
+    .timeline-item:hover .timeline-card {
+      border-color: rgba(255, 255, 255, 0.1);
+      transform: translateX(6px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+    }
+
+    .timeline-item:hover .card-glow-edge {
+      width: 6px;
+    }
+
+    /* Card inner elements */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .card-date {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(240, 244, 255, 0.95);
+      letter-spacing: 0.01em;
+    }
+
+    .card-tag {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    .card-content h4 {
+      margin: 0 0 4px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.015em;
+    }
+
+    .card-inst {
+      margin: 0 0 8px;
+      font-size: 0.84rem;
+      color: rgba(200, 212, 236, 0.55);
+      font-style: italic;
+    }
+
+    .card-desc {
+      margin: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .card-right-icon {
+      font-size: 2.2rem;
+      color: rgba(255, 255, 255, 0.03);
+      transition: color 0.4s ease, transform 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .timeline-item:hover .card-right-icon {
+      color: rgba(255, 255, 255, 0.06);
+      transform: scale(1.08) rotate(5deg);
     }
 
     .projects-grid {
@@ -1810,32 +2863,68 @@
         grid-template-columns: 1fr;
       }
 
-      .about-layout {
+      .about-center {
+        padding: 0 16px;
+      }
+
+      /* Journey Responsive Styles */
+      .journey-hero {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 36px;
       }
 
-      /* Timeline: linearize to left-aligned */
-      .journey-node:nth-child(odd),
-      .journey-node:nth-child(even) {
-        flex-direction: row;
+      .journey-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+      }
+
+      .timeline-container {
         padding-left: 40px;
-        padding-right: 0;
       }
 
-      .journey-dot {
+      .timeline-spine {
+        left: 56px;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .timeline-left {
+        position: relative;
         left: 0;
-        transform: translateX(-50%);
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 10px;
+        margin-top: 0;
+        margin-left: 36px;
       }
 
-      .journey-line {
+      .timeline-dot-container {
+        position: absolute;
         left: 0;
-        transform: none;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .journey-node:nth-child(odd):hover .journey-card,
-      .journey-node:nth-child(even):hover .journey-card {
-        transform: translateX(4px);
+      .timeline-dot {
+        margin-top: 0;
+      }
+
+      .timeline-card {
+        padding: 16px 20px;
+        margin-left: 36px;
+      }
+
+      .card-right-icon {
+        display: none;
       }
 
       .hero-panel {
@@ -1861,8 +2950,13 @@
         min-height: 0;
       }
 
-      .nav-links {
+      .nav-links,
+      .nav-resume-btn {
         display: none;
+      }
+
+      .nav-shell {
+        padding: 12px 20px;
       }
 
       .hamburger {
@@ -1908,13 +3002,12 @@
         grid-template-columns: 1fr;
       }
 
-      .about-layout {
-        gap: 24px;
+      .about-display-heading {
+        font-size: clamp(2rem, 9vw, 3rem);
       }
 
-      .about-highlights {
-        grid-template-columns: 1fr;
-        gap: 10px;
+      .about-display-sub {
+        font-size: clamp(1.6rem, 7.5vw, 2.4rem);
       }
 
       .hl-card {
@@ -2018,6 +3111,79 @@
       }
     }
 
+
+    /* ── Life Moments Carousel ── */
+    .life-carousel-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 56px 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .lc-stage {
+      position: relative;
+      width: 100%;
+      max-width: 760px;
+      height: 420px;
+      overflow: hidden;
+    }
+
+    .lc-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      will-change: transform, opacity, width, height;
+      /* Single unified transition — all props together, no animation competing */
+      transition:
+        transform  0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        width      0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        height     0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity    0.8s ease,
+        filter     0.8s ease,
+        box-shadow 0.8s ease;
+    }
+
+    /* Disable transitions during initial placement */
+    .lc-card.lc-no-transition {
+      transition: none !important;
+    }
+
+    .lc-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Label below */
+    .lc-label {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-style: italic;
+      color: rgba(239, 244, 255, 0.88);
+      letter-spacing: 0.02em;
+      transition: opacity 0.25s ease;
+    }
+
+    .lc-label.lc-fade {
+      opacity: 0;
+    }
+
+    @media (max-width: 640px) {
+      .lc-stage { height: 280px; }
+      .lc-label { font-size: 1.3rem; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
 
       *,
@@ -2037,8 +3203,12 @@
   <header class="site-nav" id="navbar">
     <div class="nav-shell">
       <a href="#hero" class="brand" aria-label="Tejas Patare home">
-        <span class="brand-badge"><img src="tejas-badge-opt.png" alt="Tejas Patare" loading="eager" fetchpriority="high"></span>
-        <span>Tejas Patare</span>
+        <span class="brand-badge"><img src="tejas-badge-opt.png" alt="Tejas Patare" loading="eager"
+            fetchpriority="high"></span>
+        <div class="brand-info">
+          <span class="brand-name">Tejas Patare</span>
+          <span class="brand-subtitle">Full Stack Developer</span>
+        </div>
       </a>
       <nav aria-label="Primary navigation">
         <ul class="nav-links">
@@ -2046,10 +3216,11 @@
           <li><a class="nav-link" href="#journey">Journey</a></li>
           <li><a class="nav-link" href="#projects">Projects</a></li>
           <li><a class="nav-link" href="#certificates">Certificates</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <a class="nav-resume-btn" href="Tejas Patare - 22f1001500 - IITM BS.pdf" download="Tejas_Patare_Resume.pdf"><i
+          class="fa-solid fa-download"></i> Resume</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
         aria-controls="mobileDrawer">
         <i class="fa-solid fa-bars"></i>
@@ -2064,7 +3235,6 @@
       <a href="#journey">Journey</a>
       <a href="#projects">Projects</a>
       <a href="#certificates">Certificates</a>
-      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </aside>
@@ -2076,10 +3246,21 @@
           <div class="eyebrow"><i class="fa-solid fa-location-dot"></i> Pune, India</div>
           <h1>Tejas Patare</h1>
           <p class="role"><span id="heroRoleText">Full Stack Developer</span></p>
-          <p class="tagline">I build things for the web that people love to use.</p>
-          <div class="hero-actions">
-            <a class="button" href="#projects"><i class="fa-solid fa-arrow-right"></i> View Projects</a>
-            <a class="ghost-button" href="#contact"><i class="fa-regular fa-paper-plane"></i> Let's Talk</a>
+          <p class="tagline">Building products, stories, and experiences through code.</p>
+          <div class="hero-stats-row">
+            <div class="hero-stat">
+              <strong>5+</strong>
+              <span>projects</span>
+            </div>
+            <div class="hero-stat">
+              <strong>2</strong>
+              <span>internships</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>500+</strong>
+              <span>dsa problems</span>
+            </div>
           </div>
         </div>
 
@@ -2087,19 +3268,20 @@
           <div class="hero-panel-grid">
             <div class="profile-card">
               <div class="profile-card-surface">
-                <div class="profile-badge">
-                  <span class="profile-badge-dot"></span>
-                  <span>Available for Work</span>
-                </div>
-                <img class="profile-photo" src="tejas-profile-final.jpg" alt="Portrait of Tejas Patare" loading="eager" fetchpriority="high">
+                <img class="profile-photo" src="tejas-profile-final.jpg" alt="Portrait of Tejas Patare" loading="eager"
+                  fetchpriority="high">
                 <div class="profile-overlay">
                   <p class="profile-name">Tejas Patare</p>
                   <p class="profile-role">Frontend Systems • Product UI • Full Stack</p>
                   <div class="profile-socials">
-                    <a href="https://github.com/tejas-34" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/tejaspatare" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com/tejaspatare" target="_blank" rel="noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="mailto:pataretejas1885@email.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://github.com/tejas-34" target="_blank" rel="noreferrer" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/tejaspatare" target="_blank" rel="noreferrer"
+                      aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/tejaspatare" target="_blank" rel="noreferrer" aria-label="Twitter"><i
+                        class="fa-brands fa-twitter"></i></a>
+                    <a href="mailto:pataretejas1885@email.com" aria-label="Email"><i
+                        class="fa-regular fa-envelope"></i></a>
                   </div>
                 </div>
               </div>
@@ -2108,8 +3290,9 @@
         </div>
       </div>
       <a class="scroll-indicator" href="#about" aria-label="Scroll to about section">
-        <span>Scroll</span>
-        <i class="fa-solid fa-arrow-down-long"></i>
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+        <div class="scroll-mouse"></div>
       </a>
     </section>
 
@@ -2117,224 +3300,338 @@
       <div class="about-orb about-orb--1" aria-hidden="true"></div>
       <div class="about-orb about-orb--2" aria-hidden="true"></div>
 
-      <div class="about-layout">
-        <!-- Left Column -->
-        <div class="about-left">
-          <span class="section-kicker"><i class="fa-solid fa-user"></i> About Me</span>
-          <h2>Building scalable web applications with <span class="heading-accent">clean design &amp; strong
-              engineering.</span></h2>
-          <p class="about-bio">I'm Tejas Patare, a Full Stack Developer and MSc Computer Science student who enjoys
-            building scalable, user-focused web applications with modern technologies and clean architecture.</p>
+      <div class="about-center">
+        <span class="about-kicker">ABOUT ME</span>
 
-          <div class="about-highlights">
-            <div class="hl-card">
-              <div class="hl-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-              <div class="hl-text">
-                <h4>MSc Computer Science</h4>
-                <p>Fergusson College, Pune</p>
-              </div>
-            </div>
-            <div class="hl-card">
-              <div class="hl-icon"><i class="fa-solid fa-layer-group"></i></div>
-              <div class="hl-text">
-                <h4>Full Stack Developer</h4>
-                <p>Django &bull; Vue.js &bull; REST APIs</p>
-              </div>
-            </div>
-            <div class="hl-card">
-              <div class="hl-icon"><i class="fa-solid fa-building"></i></div>
-              <div class="hl-text">
-                <h4>SGBC Internship</h4>
-                <p>IIT Madras</p>
-              </div>
-            </div>
-            <div class="hl-card">
-              <div class="hl-icon"><i class="fa-solid fa-server"></i></div>
-              <div class="hl-text">
-                <h4>Backend + UI Focus</h4>
-                <p>Scalable Systems &amp; Clean UX</p>
-              </div>
-            </div>
-          </div>
+        <h2 class="about-display-heading">
+          Software Engineer &amp;<br>
+          Full Stack Developer<br>
+          <span class="about-display-sub">and little bit of <em class="about-display-em"> everything.</em></span>
+        </h2>
+
+        <div class="about-body-text">
+          <p>I'm Tejas Patare, a Full Stack Developer and Computer Science student passionate about creating scalable
+            web applications and clean digital experiences. From frontend interfaces to backend architecture, I enjoy
+            turning complex ideas into simple, user-friendly products.</p>
+
+          <p>My expertise includes Django, Vue.js, PostgreSQL, REST APIs, and modern web technologies. I'm always
+            curious to explore new tools, improve my skills, and build projects that solve real problems.</p>
+
+          <p>When I'm not coding, I'm probably dreaming up new ideas, watching tech videos late night, or planning
+            ideas bigger than my current skill level.</p>
+
+          <p class="about-belief"><strong>I believe great software should not only work well &mdash; it should feel
+              effortless to use.</strong></p>
         </div>
 
-        <!-- Right Column -->
-        <div class="about-right">
-          <!-- Snapshot Card -->
-          <div class="about-glass">
-            <div class="glass-header">
-              <div class="glass-header-icon purple"><i class="fa-solid fa-bolt"></i></div>
-              <div>
-                <h3>Quick Snapshot</h3>
-                <small>Key details at a glance</small>
-              </div>
-            </div>
-            <div class="snap-list">
-              <div class="snap-item">
-                <div class="snap-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="snap-text">
-                  <span>Location</span>
-                  <strong>Pune, India</strong>
-                </div>
-              </div>
-              <div class="snap-item">
-                <div class="snap-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div class="snap-text">
-                  <span>Education</span>
-                  <strong>MSc CS, Fergusson College</strong>
-                </div>
-              </div>
-              <div class="snap-item">
-                <div class="snap-icon"><i class="fa-solid fa-book-open"></i></div>
-                <div class="snap-text">
-                  <span>Current Studies</span>
-                  <strong>BS Data Science, IIT Madras</strong>
-                </div>
-              </div>
-              <div class="snap-item">
-                <div class="snap-icon"><i class="fa-solid fa-code"></i></div>
-                <div class="snap-text">
-                  <span>Specialization</span>
-                  <strong>Full Stack Development</strong>
-                </div>
-              </div>
-              <div class="snap-item">
-                <div class="snap-icon"><i class="fa-solid fa-database"></i></div>
-                <div class="snap-text">
-                  <span>Tech Focus</span>
-                  <strong>Django, Vue.js, PostgreSQL, REST APIs</strong>
-                </div>
-              </div>
-            </div>
-            <div class="snap-footer">
-              <div class="snap-status">
-                <span class="s-dot"></span>
-                Open to Internships &amp; Full-time Roles
-              </div>
-            </div>
-          </div>
-
-          <!-- Experience Card -->
-          <div class="about-glass">
-            <div class="glass-header">
-              <div class="glass-header-icon cyan"><i class="fa-solid fa-briefcase"></i></div>
-              <div>
-                <h3>Internship Experience</h3>
-                <small>Professional Work</small>
-              </div>
-            </div>
-            <div class="exp-body">
-              <div class="exp-org"><i class="fa-solid fa-building-columns"></i> Sudha Gopalakrishnan Brain Centre
-                (SGBC), IIT Madras</div>
-              <p class="exp-desc">Worked on web applications and internal systems supporting neuroscience research.
-                Collaborated with teams to build scalable tools, improve usability, and enhance frontend/backend
-                integration.</p>
-              <div class="exp-meta">
-                <span class="exp-meta-tag"><i class="fa-solid fa-calendar"></i> Feb – Mar 2026</span>
-                <span class="exp-meta-tag"><i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu</span>
-                <span class="exp-meta-tag"><i class="fa-solid fa-code-branch"></i> Full Stack Developer</span>
-              </div>
-              <div class="exp-tech">
-                <span class="exp-pill">Python</span>
-                <span class="exp-pill">Django</span>
-                <span class="exp-pill">JavaScript</span>
-                <span class="exp-pill">HTML</span>
-                <span class="exp-pill">CSS</span>
-                <span class="exp-pill">Git</span>
-              </div>
-            </div>
-          </div>
+        <div class="about-socials-row">
+          <a class="about-icon-btn" href="https://github.com/tejas-34" target="_blank" rel="noopener"
+            aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a class="about-icon-btn" href="https://linkedin.com/in/tejaspatare" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a class="about-icon-btn" href="mailto:pataretejas1885@email.com" aria-label="Email"><i
+              class="fa-regular fa-envelope"></i></a>
         </div>
       </div>
     </section>
 
-    <!-- Journey Section -->
-    <section class="reveal" id="journey">
-      <div class="section-heading">
-        <span class="section-kicker"><i class="fa-solid fa-road"></i> My Journey</span>
-        <h2>The path that shaped my <span class="heading-accent">engineering mindset.</span></h2>
+    <!-- Life Moments Carousel -->
+    <section id="life-moments" style="padding:0 0 80px; background: var(--bg);">
+      <div class="life-carousel-wrap" id="lifeCarousel">
+        <div class="lc-stage" id="lcStage"></div>
+        <div class="lc-label" id="lcLabel">I Build</div>
       </div>
 
-      <div class="journey-track">
-        <div class="journey-line" aria-hidden="true"></div>
+      <script>
+        (function () {
+          const slides = [
+            { src: '33866DCD-94FE-4651-B8C2-571D1CE5000C_1_201_a.jpeg', label: 'I Build'  },
+            { src: 'CF477476-7123-4B9F-B31B-0C94B919E572_1_201_a.jpeg', label: 'I Teach'  },
+            { src: 'F8A1CC75-94F1-408A-9E67-7701604FAA76_1_201_a.jpeg', label: 'I Travel' },
+            { src: 'F536CF66-5CF2-414A-9A98-A722F72257D7_1_201_a.jpeg', label: 'I Speak'  }
+          ];
 
-        <div class="journey-node">
-          <div class="journey-dot purple"></div>
-          <div class="journey-card">
-            <div class="journey-year">2019 – 2021</div>
-            <h4>Higher Secondary (Science)</h4>
-            <p class="journey-inst">R.B. Narayanrao Borawake College, Shrirampur</p>
-            <p>Built a strong foundation in mathematics, logic, and analytical thinking through rigorous science
-              education.</p>
-            <span class="journey-tag tag-edu">Education</span>
+          const stage   = document.getElementById('lcStage');
+          const labelEl = document.getElementById('lcLabel');
+          const n       = slides.length;
+          let active    = 0;
+          let timer;
+
+          const mob = () => window.innerWidth <= 640;
+
+          /* Returns the inline-style object for each positional slot */
+          function stateFor(offset) {
+            const m = mob();
+            if (offset === 0) return {
+              transform:  'translate(-50%,-50%) translateX(0px)',
+              width:      m ? '190px' : '280px',
+              height:     m ? '280px' : '420px',
+              opacity:    '1',
+              filter:     'brightness(1) saturate(1)',
+              zIndex:     '3',
+              border:     '2px solid #00f5d4',
+              boxShadow:  '0 0 0 1px rgba(0,245,212,0.08),0 0 36px rgba(0,245,212,0.2),0 24px 64px rgba(0,0,0,0.55)',
+            };
+            if (offset === 1) return {
+              transform:  m ? 'translate(-50%,-50%) translateX(155px)' : 'translate(-50%,-50%) translateX(248px)',
+              width:      m ? '126px' : '200px',
+              height:     m ? '178px' : '306px',
+              opacity:    '0.48',
+              filter:     'brightness(0.5) saturate(0.6)',
+              zIndex:     '2',
+              border:     '1px solid transparent',
+              boxShadow:  'none',
+            };
+            if (offset === n - 1) return {
+              transform:  m ? 'translate(-50%,-50%) translateX(-155px)' : 'translate(-50%,-50%) translateX(-248px)',
+              width:      m ? '126px' : '200px',
+              height:     m ? '178px' : '306px',
+              opacity:    '0.48',
+              filter:     'brightness(0.5) saturate(0.6)',
+              zIndex:     '2',
+              border:     '1px solid transparent',
+              boxShadow:  'none',
+            };
+            /* Hidden — off-screen right */
+            return {
+              transform:  m ? 'translate(-50%,-50%) translateX(330px)' : 'translate(-50%,-50%) translateX(510px)',
+              width:      m ? '126px' : '200px',
+              height:     m ? '178px' : '306px',
+              opacity:    '0',
+              filter:     'brightness(0.2)',
+              zIndex:     '1',
+              border:     '1px solid transparent',
+              boxShadow:  'none',
+            };
+          }
+
+          /* Build cards */
+          const cards = slides.map((s, i) => {
+            const c = document.createElement('div');
+            c.className = 'lc-card lc-no-transition';
+            c.innerHTML = `<img src="${s.src}" alt="${s.label}" draggable="false" loading="lazy">`;
+            c.addEventListener('click', () => goTo(i));
+            stage.appendChild(c);
+            return c;
+          });
+
+          function applyState(card, offset) {
+            Object.assign(card.style, stateFor(offset));
+          }
+
+          function render() {
+            cards.forEach((card, i) => {
+              applyState(card, (i - active + n) % n);
+            });
+            labelEl.textContent = slides[active].label;
+          }
+
+          function goTo(idx) {
+            active = (idx + n) % n;
+            render();
+            labelEl.classList.add('lc-fade');
+            setTimeout(() => labelEl.classList.remove('lc-fade'), 50);
+          }
+
+          /* — Init: place cards instantly (no transition), then enable transitions — */
+          render(); /* sets positions with lc-no-transition */
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              /* Now that browser has painted, enable transitions on all cards */
+              cards.forEach(c => c.classList.remove('lc-no-transition'));
+            });
+          });
+
+          let paused = false;
+
+          function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => { if (!paused) goTo(active + 1); }, 3200);
+          }
+
+          const wrap = document.getElementById('lifeCarousel');
+          wrap.addEventListener('mouseenter', () => { paused = true; });
+          wrap.addEventListener('mouseleave', () => { paused = false; });
+          document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) { clearInterval(timer); startTimer(); }
+          });
+          window.addEventListener('resize', render);
+
+          startTimer();
+        })();
+      </script>
+    </section>
+
+
+
+    <section class="reveal" id="journey">
+      <!-- Top Hero Header Part -->
+      <div class="journey-hero">
+        <div class="j-hero-left">
+          <span class="section-kicker"><span class="kicker-dot"></span> MY JOURNEY</span>
+          <h2>From curiosity to <span class="text-gradient-purple">creating impact.</span></h2>
+
+        </div>
+
+
+      </div>
+
+      <!-- Timeline Title -->
+      <div class="journey-title-block">
+        <h3>The Road So Far</h3>
+        <div class="j-title-bar"></div>
+      </div>
+
+      <!-- Timeline Spine & Cards -->
+      <div class="timeline-container">
+        <div class="timeline-spine"></div>
+
+        <!-- Milestone 1 -->
+        <div class="timeline-item cyan-theme">
+          <div class="timeline-left">
+            <div class="node-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <span class="node-keyword">FOUNDATION</span>
+          </div>
+          <div class="timeline-dot-container">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-glow-edge"></div>
+            <div class="card-header">
+              <span class="card-date">2019 – 2021</span>
+              <span class="card-tag tag-edu">Education</span>
+            </div>
+            <div class="card-content">
+              <h4>Higher Secondary (Science)</h4>
+              <p class="card-inst">R.B. Narayanrao Borawake College, Shrirampur</p>
+              <p class="card-desc">Built a strong foundation in mathematics, logic, and analytical thinking through
+                rigorous science education.</p>
+            </div>
+            <div class="card-right-icon"><i class="fa-solid fa-atom"></i></div>
           </div>
         </div>
 
-        <div class="journey-node">
-          <div class="journey-dot purple"></div>
-          <div class="journey-card">
-            <div class="journey-year">2021 – 2025</div>
-            <h4>BSc Computer Science</h4>
-            <p class="journey-inst">Savitribai Phule Pune University</p>
-            <p>Core CS fundamentals — data structures, algorithms, databases, and software engineering principles.</p>
-            <span class="journey-tag tag-edu">Education</span>
+        <!-- Milestone 2 -->
+        <div class="timeline-item purple-theme">
+          <div class="timeline-left">
+            <div class="node-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <span class="node-keyword">CORE LEARNING</span>
+          </div>
+          <div class="timeline-dot-container">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-glow-edge"></div>
+            <div class="card-header">
+              <span class="card-date">2021 – 2025</span>
+              <span class="card-tag tag-edu">Education</span>
+            </div>
+            <div class="card-content">
+              <h4>BSc Computer Science</h4>
+              <p class="card-inst">Savitribai Phule Pune University</p>
+              <p class="card-desc">Core CS fundamentals — data structures, algorithms, databases, and software
+                engineering principles.</p>
+            </div>
+            <div class="card-right-icon"><i class="fa-solid fa-desktop"></i></div>
           </div>
         </div>
 
-        <div class="journey-node">
-          <div class="journey-dot"></div>
-          <div class="journey-card">
-            <div class="journey-year">2022 – 2027</div>
-            <h4>BS Data Science &amp; Applications</h4>
-            <p class="journey-inst">Indian Institute of Technology Madras</p>
-            <p>Advanced coursework in data science, machine learning, statistics, and computational thinking.</p>
-            <span class="journey-tag tag-edu">Education</span>
+        <!-- Milestone 3 -->
+        <div class="timeline-item blue-theme">
+          <div class="timeline-left">
+            <div class="node-icon"><i class="fa-solid fa-brain"></i></div>
+            <span class="node-keyword">ADVANCED LEARNING</span>
+          </div>
+          <div class="timeline-dot-container">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-glow-edge"></div>
+            <div class="card-header">
+              <span class="card-date">2022 – 2027</span>
+              <span class="card-tag tag-edu">Education</span>
+            </div>
+            <div class="card-content">
+              <h4>BS Data Science &amp; Applications</h4>
+              <p class="card-inst">Indian Institute of Technology Madras</p>
+              <p class="card-desc">Advanced coursework in data science, machine learning, statistics, and computational
+                thinking.</p>
+            </div>
+            <div class="card-right-icon"><i class="fa-solid fa-chart-line"></i></div>
           </div>
         </div>
 
-        <div class="journey-node">
-          <div class="journey-dot"></div>
-          <div class="journey-card">
-            <div class="journey-year">Jan – Feb 2025</div>
-            <h4>Web Development Intern</h4>
-            <p class="journey-inst">PharmaAI</p>
-            <p>First professional experience — contributed to web development projects and gained real-world engineering
-              exposure.</p>
-            <span class="journey-tag tag-work">Experience</span>
+        <!-- Milestone 4 -->
+        <div class="timeline-item green-theme">
+          <div class="timeline-left">
+            <div class="node-icon"><i class="fa-solid fa-bolt"></i></div>
+            <span class="node-keyword">FIRST STEP</span>
+          </div>
+          <div class="timeline-dot-container">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-glow-edge"></div>
+            <div class="card-header">
+              <span class="card-date">Jan – Feb 2025</span>
+              <span class="card-tag tag-exp">Experience</span>
+            </div>
+            <div class="card-content">
+              <h4>Web Development Intern</h4>
+              <p class="card-inst">PharmaAI</p>
+              <p class="card-desc">First professional experience — contributed to web development projects and gained
+                real-world engineering exposure.</p>
+            </div>
+            <div class="card-right-icon"><i class="fa-solid fa-code"></i></div>
           </div>
         </div>
 
-        <div class="journey-node">
-          <div class="journey-dot purple"></div>
-          <div class="journey-card">
-            <div class="journey-year">2025 – 2027</div>
-            <h4>MSc Computer Science</h4>
-            <p class="journey-inst">Fergusson College, Pune</p>
-            <p>Specializing in scalable systems, full-stack development, and modern software design.</p>
-            <span class="journey-tag tag-edu">Education</span>
+        <!-- Milestone 5 -->
+        <div class="timeline-item orange-theme">
+          <div class="timeline-left">
+            <div class="node-icon"><i class="fa-solid fa-rocket"></i></div>
+            <span class="node-keyword">LEVEL UP</span>
+          </div>
+          <div class="timeline-dot-container">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-glow-edge"></div>
+            <div class="card-header">
+              <span class="card-date">Feb – Mar 2026</span>
+              <span class="card-tag tag-exp">Experience</span>
+            </div>
+            <div class="card-content">
+              <h4>Full Stack Developer Intern</h4>
+              <p class="card-inst">SGBC, IIT Madras</p>
+              <p class="card-desc">Built production web applications for neuroscience research using Django, Vue.js,
+                PostgreSQL and REST APIs.</p>
+            </div>
+            <div class="card-right-icon"><i class="fa-solid fa-terminal"></i></div>
           </div>
         </div>
 
-        <div class="journey-node">
-          <div class="journey-dot"></div>
-          <div class="journey-card">
-            <div class="journey-year">Feb – Mar 2026</div>
-            <h4>Full Stack Developer Intern</h4>
-            <p class="journey-inst">SGBC, IIT Madras</p>
-            <p>Built production web applications for neuroscience research using Django, Vue.js, PostgreSQL and REST
-              APIs.</p>
-            <span class="journey-tag tag-work">Experience</span>
+        <!-- Milestone 6 -->
+        <div class="timeline-item gold-theme">
+          <div class="timeline-left">
+            <div class="node-icon"><i class="fa-solid fa-star"></i></div>
+            <span class="node-keyword">THE WHY</span>
           </div>
-        </div>
-
-        <div class="journey-node">
-          <div class="journey-dot gold"></div>
-          <div class="journey-card">
-            <div class="journey-year">Next →</div>
-            <h4>Building Impactful Software Products</h4>
-            <p>Seeking opportunities to build scalable, meaningful products that push the boundaries of modern web
-              engineering.</p>
-            <span class="journey-tag tag-goal">Goal</span>
+          <div class="timeline-dot-container">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-glow-edge"></div>
+            <div class="card-header">
+              <span class="card-date">Next →</span>
+              <span class="card-tag tag-goal">Goal</span>
+            </div>
+            <div class="card-content">
+              <h4>Building Impactful Software Products</h4>
+              <p class="card-desc">Seeking opportunities to build scalable, meaningful products that push the boundaries
+                of modern web engineering.</p>
+            </div>
+            <div class="card-right-icon"><i class="fa-solid fa-bullseye"></i></div>
           </div>
         </div>
       </div>
@@ -3066,9 +4363,18 @@
       padding: 0;
       cursor: pointer;
     }
-    .mac-terminal-dot.close { background: #ff5f57; }
-    .mac-terminal-dot.minimize { background: #febc2e; }
-    .mac-terminal-dot.maximize { background: #28c840; }
+
+    .mac-terminal-dot.close {
+      background: #ff5f57;
+    }
+
+    .mac-terminal-dot.minimize {
+      background: #febc2e;
+    }
+
+    .mac-terminal-dot.maximize {
+      background: #28c840;
+    }
 
     .mac-terminal-title {
       flex: 1;
@@ -3135,40 +4441,58 @@
       color: var(--tp-output);
       animation: tp-fade-in 0.1s ease-out forwards;
     }
-    
+
     .mac-terminal-line.prompt-line {
       color: var(--tp-text);
       display: flex;
       gap: 8px;
     }
-    
-    .mac-terminal-line.success { color: var(--tp-success); }
-    .mac-terminal-line.error { color: var(--tp-error); }
-    .mac-terminal-line.easter { color: var(--tp-easter); }
+
+    .mac-terminal-line.success {
+      color: var(--tp-success);
+    }
+
+    .mac-terminal-line.error {
+      color: var(--tp-error);
+    }
+
+    .mac-terminal-line.easter {
+      color: var(--tp-easter);
+    }
 
     @keyframes tp-fade-in {
-      from { opacity: 0; transform: translateY(2px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-@media (max-width: 768px) {
-  .mac-terminal {
-    width: calc(100vw - 32px);
-    left: 16px;
-    top: 60px;
-    max-height: 80vh;
-    transform: translate(0, 0) scale(0.95);
-  }
-  .mac-terminal.is-open {
-    transform: translate(0, 0) scale(1);
-  }
-  .tp-terminal__toggle {
-    right: 16px;
-    bottom: 16px;
-  }
-}
-</style>
+      from {
+        opacity: 0;
+        transform: translateY(2px);
+      }
 
-<div class="tp-terminal" id="tpTerminal">
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mac-terminal {
+        width: calc(100vw - 32px);
+        left: 16px;
+        top: 60px;
+        max-height: 80vh;
+        transform: translate(0, 0) scale(0.95);
+      }
+
+      .mac-terminal.is-open {
+        transform: translate(0, 0) scale(1);
+      }
+
+      .tp-terminal__toggle {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
+
+  <div class="tp-terminal" id="tpTerminal">
     <button class="tp-terminal__toggle" id="tpTerminalToggle" type="button" aria-expanded="false"
       aria-controls="tpTerminalWindow">
       <i class="fa-solid fa-terminal"></i>
@@ -3189,7 +4513,8 @@
         <div id="terminalHistory"></div>
         <div class="mac-terminal-input-line">
           <span class="mac-terminal-prompt">tejas@universe:~$</span>
-          <input type="text" class="mac-terminal-input" id="tpTerminalInput" spellcheck="false" autocomplete="off" autocapitalize="off" />
+          <input type="text" class="mac-terminal-input" id="tpTerminalInput" spellcheck="false" autocomplete="off"
+            autocapitalize="off" />
         </div>
       </div>
     </div>
@@ -3341,7 +4666,7 @@
         windowEl.classList.add("is-dragging");
         startX = e.clientX;
         startY = e.clientY;
-        
+
         const computedStyle = window.getComputedStyle(windowEl);
         startLeft = parseFloat(computedStyle.left);
         startTop = parseFloat(computedStyle.top);
