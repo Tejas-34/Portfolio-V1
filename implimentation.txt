@@ -1,0 +1,105 @@
+Act as a world-class UI/UX designer and senior frontend developer.
+
+Redesign and improve my developer portfolio website UI to look modern, premium, futuristic, and highly professional while keeping the current dark theme aesthetic.
+
+Goals:
+- Make the portfolio look like a top-tier frontend/full-stack developer portfolio
+- Improve visual hierarchy, spacing, typography, responsiveness, animations, and user experience
+- Maintain a clean and minimal design
+- Use modern UI trends inspired by SaaS websites and award-winning portfolios
+
+Current Design:
+- Dark gradient background
+- Hero section with intro text on left and profile card on right
+- Cyan/blue glowing accent colors
+- CTA buttons
+- Geometric background pattern
+
+Improve the following areas:
+
+1. Hero Section
+- Make the hero section more visually balanced
+- Improve spacing and alignment
+- Add subtle animations and motion effects
+- Add floating gradient blobs/glows
+- Add typewriter or rotating text effect
+- Improve CTA buttons with hover animations
+
+2. Typography
+- Use modern typography hierarchy
+- Make headings bold and impactful
+- Improve subtitle readability
+- Add better line-height and spacing
+
+3. Profile Card
+- Convert it into a premium glassmorphism card
+- Add soft shadows and glow
+- Add hover animation
+- Add status badge like “Available for Work”
+- Make profile image blend naturally with background
+
+4. Background
+- Reduce visual noise from geometric patterns
+- Add animated blurred gradients/orbs
+- Keep dark futuristic aesthetic
+
+5. Navigation Bar
+- Add sticky transparent navbar
+- Add blur effect
+- Add active section indicator
+- Add smooth scroll transitions
+
+6. Tech Stack Section
+- Add animated tech stack pills/icons
+- Use hover glow effects
+- Make it visually attractive
+
+7. Projects Section
+- Create premium project cards
+- Include:
+  - project image
+  - tech stack
+  - GitHub button
+  - Live Demo button
+  - hover animations
+- Use grid layout
+- Add subtle tilt/parallax effects
+
+8. Animations
+- Use Framer Motion / GSAP / AOS
+- Add fade-up animations while scrolling
+- Add smooth hover interactions
+- Add cursor glow effect
+
+9. Responsiveness
+- Fully optimize for mobile, tablet, and desktop
+- Ensure clean stacking and spacing on small screens
+
+10. UI Style
+Style inspiration:
+- Linear
+- Vercel
+- Framer
+- Modern SaaS dashboards
+- Award-winning developer portfolios
+
+Tech Stack:
+HTML, CSS, JavaScript
+
+Output Requirements:
+- Provide improved UI structure
+- Suggest color palette
+- Suggest font combinations
+- Suggest animation ideas
+- Suggest layout improvements
+- Provide modern CSS styling ideas
+- Keep performance optimized
+- Make the design recruiter-friendly and visually memorable
+
+The final UI should feel:
+- modern
+- elegant
+- premium
+- interactive
+- developer-focused
+- visually polished
