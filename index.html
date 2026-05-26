@@ -1659,77 +1659,45 @@
       transform: translate(-50%, 0);
     }
 
-    .music-player {
+    .music-player-v2 {
       position: fixed;
-      right: 168px;
+      right: 180px;
       bottom: 28px;
-      width: 68px;
-      max-width: calc(100vw - 24px);
-      border-radius: 22px;
-      background: rgba(8, 11, 18, 0.82);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(18px);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      z-index: 125;
-      transition: width 0.3s ease;
-    }
-
-    .music-player.open {
-      width: 320px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
-    }
-
-    .music-toggle {
-      width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 16px;
-      border: 0;
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
+      z-index: 125;
     }
 
-    .music-toggle .music-label {
-      display: inline-flex;
+    @media (max-width: 768px) {
+      .music-player-v2 {
+        right: 20px;
+        bottom: 80px;
+      }
+    }
+
+    .music-play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--panel);
+      border: 1px solid var(--accent);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      color: var(--accent);
+      display: flex;
       align-items: center;
-      gap: 10px;
-      white-space: nowrap;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      flex-shrink: 0;
     }
 
-    .music-toggle .music-copy,
-    .music-toggle .fa-chevron-up {
-      opacity: 0;
-      width: 0;
-      overflow: hidden;
-      transition: opacity 0.2s ease;
-    }
-
-    .music-player.open .music-toggle .music-copy,
-    .music-player.open .music-toggle .fa-chevron-up {
-      opacity: 1;
-      width: auto;
-    }
-
-    .music-content {
-      max-height: 0;
-      transition: max-height 0.3s ease;
-    }
-
-    .music-player.open .music-content {
-      max-height: 120px;
-    }
-
-    .music-content audio {
-      width: 100%;
-      height: 60px;
-      border: 0;
-      display: block;
-      border-radius: 0 0 18px 18px;
-      padding: 0 8px 8px 8px;
+    .music-play-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 16px 40px rgba(0, 245, 212, 0.2);
+      background: rgba(11, 17, 29, 0.9);
     }
 
     .reveal {
@@ -2616,14 +2584,11 @@
     </div>
   </div>
 
-  <div class="music-player" id="musicPlayer">
-    <button class="music-toggle" id="musicToggle" type="button" aria-expanded="false" aria-controls="musicContent">
-      <span class="music-label"><i class="fa-solid fa-music"></i><span class="music-copy">Lo-fi Playlist</span></span>
-      <i class="fa-solid fa-chevron-up"></i>
+  <div class="music-player-v2" id="musicPlayer">
+    <audio id="bgMusic" src="paulyudin-minimal-tech-151890.mp3" loop></audio>
+    <button class="music-play-btn" id="musicToggleBtn" aria-label="Play/Pause Music">
+      <i class="fa-solid fa-play" id="musicIcon"></i>
     </button>
-    <div class="music-content" id="musicContent">
-      <audio id="bgMusic" src="paulyudin-minimal-tech-151890.mp3" controls loop></audio>
-    </div>
   </div>
 
   <div class="modal" id="musicPromptModal" aria-hidden="true">
@@ -2693,7 +2658,9 @@
     const modalMeta = document.getElementById("modalMeta");
     const modalClose = document.getElementById("modalClose");
     const musicPlayer = document.getElementById("musicPlayer");
-    const musicToggle = document.getElementById("musicToggle");
+    const musicToggleBtn = document.getElementById("musicToggleBtn");
+    const bgMusic = document.getElementById("bgMusic");
+    const musicIcon = document.getElementById("musicIcon");
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
     const resumeButton = document.getElementById("resumeButton");
@@ -2801,10 +2768,14 @@
       }
     });
 
-    musicToggle.addEventListener("click", () => {
-      const open = !musicPlayer.classList.contains("open");
-      musicPlayer.classList.toggle("open", open);
-      musicToggle.setAttribute("aria-expanded", String(open));
+    musicToggleBtn.addEventListener("click", () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicIcon.className = "fa-solid fa-pause";
+      } else {
+        bgMusic.pause();
+        musicIcon.className = "fa-solid fa-play";
+      }
     });
 
     const toastMessage = (message) => {
@@ -2945,11 +2916,10 @@ Placeholder resume content. Replace this file body with your real experience, pr
       localStorage.setItem("hasSeenMusicPrompt", "true");
 
       if (startMusic) {
-        const audio = musicPlayer.querySelector("audio");
-        if (audio) {
-          audio.play().catch(e => console.log("Audio autoplay was prevented:", e));
-          musicPlayer.classList.add("open");
-          musicToggle.setAttribute("aria-expanded", "true");
+        if (bgMusic) {
+          bgMusic.play().then(() => {
+            if (musicIcon) musicIcon.className = "fa-solid fa-pause";
+          }).catch(e => console.log("Audio autoplay was prevented:", e));
         }
       }
     };
