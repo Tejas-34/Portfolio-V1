@@ -3354,14 +3354,15 @@ Placeholder resume content. Replace this file body with your real experience, pr
       let startX, startY, startLeft, startTop;
 
       titlebar.addEventListener("mousedown", (e) => {
-        if (e.target.closest(".tp-terminal__controls")) return;
+        if (e.target.closest(".mac-terminal-dots")) return;
         isDragging = true;
         windowEl.classList.add("is-dragging");
         startX = e.clientX;
         startY = e.clientY;
-        const rect = windowEl.getBoundingClientRect();
-        startLeft = rect.left;
-        startTop = rect.top;
+        
+        const computedStyle = window.getComputedStyle(windowEl);
+        startLeft = parseFloat(computedStyle.left);
+        startTop = parseFloat(computedStyle.top);
 
         const onMouseMove = (e) => {
           if (!isDragging) return;
