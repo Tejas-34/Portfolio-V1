@@ -2811,40 +2811,62 @@
 
       /* Hero Section & Spacing */
       #hero {
-        padding-bottom: 1rem !important;
+        min-height: auto !important;
+        padding-bottom: 0 !important;
       }
       #about {
-        padding-top: 2rem !important;
+        padding-top: 1rem !important;
       }
       .hero-layout {
         display: flex;
         flex-direction: column;
-        min-height: auto;
+        min-height: auto !important;
         gap: 16px !important;
+        align-items: center;
       }
       .hero-panel {
         order: 2;
-        height: auto;
+        height: auto !important;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 0 !important;
+      }
+      .hero-panel-grid {
+        height: auto !important;
+        margin-bottom: 0 !important;
       }
       .hero-copy {
         order: 1;
-        text-align: left;
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .hero-socials-row {
+        justify-content: center;
       }
       .profile-card {
         width: 100%;
-        max-width: 340px;
+        max-width: 260px !important;
         margin: 0 auto !important;
       }
       .hero h1 {
-        font-size: clamp(2.5rem, 10vw, 3.5rem);
+        font-size: clamp(2rem, 8vw, 2.8rem) !important;
+      }
+      .tagline {
+        font-size: 0.9rem !important;
       }
       .hero-stats-row {
         display: flex !important;
         opacity: 1 !important;
         visibility: visible !important;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 16px;
         margin-top: 1.5rem !important;
+        width: 100%;
       }
       .hero-stat + .hero-stat {
         padding-left: 16px !important;
@@ -2857,25 +2879,66 @@
         font-size: 0.8rem;
       }
 
-      /* Hide side components causing horizontal scroll */
-      .tp-terminal__toggle,
-      .tp-terminal,
-      .mac-terminal,
-      .music-player,
-      .music-player-v2 {
-        display: none !important;
+      /* Side components visible but not overflowing */
+      .tp-terminal__toggle {
+        display: flex !important;
+        right: 16px !important;
+        bottom: 80px !important;
+        transform: scale(0.8) !important;
+        transform-origin: right bottom;
+      }
+      .music-player-v2, .music-player {
+        display: flex !important;
+        right: 16px !important;
+        bottom: 16px !important;
+        transform: scale(0.8) !important;
+        transform-origin: right bottom;
+      }
+      .mac-terminal {
+        width: calc(100vw - 32px) !important;
+        left: 16px !important;
+        transform: scale(0.9) !important;
+        transform-origin: bottom right;
+      }
+      .mac-terminal.is-open {
+        transform: scale(1) !important;
+      }
+
+      /* About Section */
+      .about-display-heading {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        text-align: center;
+      }
+      .about-display-sub {
+        font-size: clamp(1.2rem, 5vw, 1.6rem) !important;
+        text-align: center;
+      }
+      .about-center p {
+        text-align: center;
+        font-size: 0.95rem !important;
+      }
+      .about-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       /* Journey Section */
       .journey-step {
-        grid-template-columns: 2.5rem 1fr;
+        grid-template-columns: 1fr;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .journey-step-number {
         font-size: 2rem;
+        margin-bottom: 8px;
       }
       .journey-step-content {
         display: flex;
         flex-direction: column;
+        align-items: center;
       }
       .journey-step-meta {
         position: relative;
@@ -2884,17 +2947,27 @@
         order: 10;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         margin-top: 1rem;
         margin-bottom: 0;
       }
+      .section-heading {
+        text-align: center;
+        align-items: center;
+      }
       .section-heading h2 {
-        font-size: clamp(2rem, 8vw, 3rem) !important;
+        font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
       }
 
       /* Projects Section */
       .projects-grid {
         grid-template-columns: 1fr;
+      }
+      .project-card {
+        text-align: center;
+      }
+      .project-links {
+        justify-content: center;
       }
 
       /* Certificates Section */
@@ -2907,6 +2980,9 @@
       }
       .filter-btn {
         font-size: 12px;
+      }
+      .certificate-card {
+        text-align: center;
       }
 
       /* Contact Section */
