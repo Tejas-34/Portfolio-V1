@@ -3123,6 +3123,97 @@
       display: none !important;
     }
 
+  
+    /* --- NEW PROJECT CARD STYLES --- */
+    .project-card {
+      padding: 0 !important;
+      background: #0f0f0f !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 14px !important;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease !important;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px) !important;
+      border-color: rgba(255,255,255,0.15) !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+    }
+
+    .project-media {
+      height: 200px !important;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 14px 14px 0 0 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+      background: #161616;
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .project-card:hover .project-media img {
+      transform: scale(1.03);
+    }
+
+    .project-body {
+      padding: 24px !important;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px !important;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.15rem !important;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .project-card p {
+      margin: 0 0 18px !important;
+      color: rgba(255, 255, 255, 0.6) !important;
+      line-height: 1.6 !important;
+      font-size: 0.9rem !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .project-tech-stack {
+      font-size: 12px !important;
+      color: rgba(255,255,255,0.35) !important;
+      margin-top: auto;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .project-links a {
+      font-size: 13px !important;
+      color: rgba(255,255,255,0.45) !important;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border: none !important;
+    }
+
+    .project-links a:hover {
+      color: #ffffff !important;
+    }
+
   </style>
 </head>
 
@@ -3517,106 +3608,79 @@
         <span class="section-kicker">Projects</span>
       </div>
       <div class="projects-grid">
-        <article class="glass-card project-card">
-          <div class="project-media" aria-hidden="true"></div>
+<article class="project-card">
+          <div class="project-media">
+            <img src="Projects/FocusSprint.png" alt="FocusSprint – Study & Productivity Tracker">
+          </div>
           <div class="project-body">
-            <h3>Orbit Commerce</h3>
-            <p>Multi-brand storefront experience with a modular content engine, polished interactions, and
-              performance-first UI architecture.</p>
-            <div class="tags">
-              <span class="tag">Frontend</span>
-              <span class="tag">E-commerce</span>
-              <span class="tag">UI System</span>
-            </div>
+            <h3>FocusSprint – Study & Productivity Tracker</h3>
+            <p>A productivity tracker designed for students preparing for exams and technical interviews. It helps users stay focused using timed study sessions, daily streak tracking, phone distraction counting, and focus analytics.</p>
+            <div class="project-tech-stack">React &middot; Django &middot; PostgreSQL &middot; JavaScript</div>
+          </div>
+        </article>
+<article class="project-card">
+          <div class="project-media">
+            <img src="Projects/Shramik_Setu.png" alt="Shramik Setu – Worker Hiring Platform">
+          </div>
+          <div class="project-body">
+            <h3>Shramik Setu – Worker Hiring Platform</h3>
+            <p>A worker hiring platform where employers can post jobs and workers can apply easily. The platform supports role-based access, secure login, and streamlined communication between workers and employers.</p>
+            <div class="project-tech-stack">Django &middot; JavaScript &middot; HTML/CSS &middot; SQLite</div>
+          
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">Live Demo ↗</a>
+              <a href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a href="#" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
-        <article class="glass-card project-card">
-          <div class="project-media" aria-hidden="true"></div>
+<article class="project-card">
+          <div class="project-media">
+            <img src="Projects/IESCP  V2.png" alt="IESCP – Influencer Sponsorship Coordination Platform">
+          </div>
           <div class="project-body">
-            <h3>Pulse Analytics</h3>
-            <p>Dashboard redesign focused on faster insight scanning, chart clarity, and reusable component patterns for
-              internal teams.</p>
-            <div class="tags">
-              <span class="tag">Dashboard</span>
-              <span class="tag">Data Viz</span>
-              <span class="tag">Design</span>
-            </div>
+            <h3>IESCP – Influencer Sponsorship Coordination Platform</h3>
+            <p>A platform that connects sponsors with influencers for brand collaborations and campaign management. Users can manage campaigns, sponsorship requests, and collaboration activities.</p>
+            <div class="project-tech-stack">Vue.js &middot; Flask &middot; SQLite &middot; Bootstrap</div>
+          
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">Live Demo ↗</a>
+              <a href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a href="#" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
-        <article class="glass-card project-card">
-          <div class="project-media" aria-hidden="true"></div>
+<article class="project-card">
+          <div class="project-media">
+            <img src="Projects/IESCP  V1.png" alt="IESCP V1 – Basic Influencer Collaboration Platform">
+          </div>
           <div class="project-body">
-            <h3>Northstar Studio</h3>
-            <p>Portfolio platform for a creative studio with immersive layouts, editorial typography, and a smooth
-              mobile browsing flow.</p>
-            <div class="tags">
-              <span class="tag">Brand</span>
-              <span class="tag">Responsive</span>
-              <span class="tag">Animation</span>
-            </div>
+            <h3>IESCP V1 – Basic Influencer Collaboration Platform</h3>
+            <p>A simple influencer collaboration platform created as part of an academic project. It allows sponsors and influencers to manage profiles, campaigns, and collaboration requests.</p>
+            <div class="project-tech-stack">Flask &middot; HTML &middot; CSS &middot; Bootstrap</div>
+          
             <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">Live Demo ↗</a>
+              <a href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a href="#" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
-        <article class="glass-card project-card">
-          <div class="project-media" aria-hidden="true"></div>
+<article class="project-card">
+          <div class="project-media">
+            <img src="Projects/Addressing-Inventory-and-Profitability-Challenges-at-Graduate-Chai.png" alt="Graduate Chai – Inventory & Profitability Analysis">
+          </div>
           <div class="project-body">
-            <h3>Atlas Admin</h3>
-            <p>Operations workspace with permission-aware modules, fast navigation, and UI primitives aligned across
-              product teams.</p>
-            <div class="tags">
-              <span class="tag">Admin</span>
-              <span class="tag">SaaS</span>
-              <span class="tag">Scalability</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">Live Demo ↗</a>
-            </div>
+            <h3>Graduate Chai – Inventory & Profitability Analysis</h3>
+            <p>A business analysis project focused on inventory operations, sales trends, and profitability challenges in a tea franchise business to support better decision-making.</p>
+            <div class="project-tech-stack">Python &middot; Pandas &middot; Excel &middot; Jupyter Notebook</div>
           </div>
         </article>
-        <article class="glass-card project-card">
-          <div class="project-media" aria-hidden="true"></div>
-          <div class="project-body">
-            <h3>Canvas Learn</h3>
-            <p>Learning product landing and course discovery flow optimized for conversion, readability, and brand
-              consistency.</p>
-            <div class="tags">
-              <span class="tag">EdTech</span>
-              <span class="tag">UX</span>
-              <span class="tag">Growth</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">Live Demo ↗</a>
-            </div>
+<article class="project-card">
+          <div class="project-media">
+            <img src="Projects/CinemaForcasting.png" alt="Cinema Audience Forecasting System">
           </div>
-        </article>
-        <article class="glass-card project-card">
-          <div class="project-media" aria-hidden="true"></div>
           <div class="project-body">
-            <h3>Signal Notes</h3>
-            <p>Minimal productivity app concept with keyboard-first flows, thoughtful motion, and a restrained premium
-              interface.</p>
-            <div class="tags">
-              <span class="tag">Productivity</span>
-              <span class="tag">Prototype</span>
-              <span class="tag">Interaction</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="project-link" href="https://github.com" target="_blank" rel="noreferrer">Live Demo ↗</a>
-            </div>
+            <h3>Cinema Audience Forecasting System</h3>
+            <p>A machine learning project designed to predict audience turnout and sales patterns for cinema stores using historical sales data and forecasting insights.</p>
+            <div class="project-tech-stack">Python &middot; Scikit-learn &middot; Pandas &middot; Jupyter Notebook</div>
           </div>
         </article>
       </div>
@@ -3734,6 +3798,17 @@
             <h3>Understanding Google Cloud Platform</h3>
             <p>Successfully completed the workshop on Understanding Google Cloud Platform.</p>
             <div class="cert-meta">IIT Madras &middot; Jan 2025</div>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="Cloud" data-title="Implementing AI using Azure" data-issuer="Microsoft Azure" data-year="2024" data-image="Certificates/Implementing%20AI%20using%20Azure-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Implementing%20AI%20using%20Azure-1.png" alt="Implementing AI using Azure">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Cloud</span>
+            <h3>Implementing AI using Azure</h3>
+            <p>Successfully completed training on Implementing AI using Microsoft Azure.</p>
+            <div class="cert-meta">Microsoft Azure &middot; 2024</div>
           </div>
         </article>
         <article class="certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Byte Battle" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(1).png">
