@@ -2705,7 +2705,7 @@
       .music-player {
         right: 12px;
         bottom: 12px;
-        width: calc(100vw - 24px);
+        width: calc(100% - 24px);
       }
 
       .scroll-indicator {
@@ -2803,7 +2803,7 @@
         display: inline-flex !important;
       }
       .mobile-drawer {
-        width: 100vw;
+        width: 100%;
         border-left: none;
         display: flex;
         flex-direction: column;
@@ -2859,6 +2859,11 @@
         align-items: center;
         width: 100%;
       }
+      .hero-copy > * {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
       .hero-socials-row {
         justify-content: center;
       }
@@ -2910,7 +2915,7 @@
         transform-origin: right bottom;
       }
       .mac-terminal {
-        width: calc(100vw - 32px) !important;
+        width: calc(100% - 32px) !important;
         left: 16px !important;
         transform: scale(0.9) !important;
         transform-origin: bottom right;
@@ -3653,7 +3658,7 @@
           
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Shramik-Setu" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a href="#" target="_blank" rel="noreferrer">Demo ↗</a>
+              <a href="https://youtu.be/GOai_jApiMM?si=RrdaHGlGGAEza3U4" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
@@ -3668,7 +3673,7 @@
           
             <div class="project-links">
               <a href="https://github.com/Tejas-34/IESCP_Vesrion2" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a href="#" target="_blank" rel="noreferrer">Demo ↗</a>
+              <a href="https://youtu.be/X5uDIE-h_oc?si=AuxsOmEWXgy0U_wW" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
@@ -3683,7 +3688,7 @@
           
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Mad1-Project-IESCP" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a href="#" target="_blank" rel="noreferrer">Demo ↗</a>
+              <a href="https://youtu.be/oMvhajtcqk4?si=C6V8hhU65ki_IMmS" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
@@ -3955,7 +3960,7 @@
   </div>
 
   <div class="music-player-v2" id="musicPlayer">
-    <audio id="bgMusic" src="paulyudin-minimal-tech-151890.mp3" loop preload="none"></audio>
+    <audio id="bgMusic" src="paulyudin-minimal-tech-151890.mp3" loop preload="auto"></audio>
     <button class="music-play-btn" id="musicToggleBtn" aria-label="Play/Pause Music">
       <i class="fa-solid fa-play" id="musicIcon"></i>
     </button>
@@ -4366,7 +4371,7 @@
     .mac-terminal.is-maximized {
       top: 0 !important;
       left: 0 !important;
-      width: 100vw !important;
+      width: 100% !important;
       height: 100vh !important;
       max-height: 100vh !important;
       transform: translate(0, 0) scale(1);
@@ -4515,7 +4520,7 @@
 
     @media (max-width: 768px) {
       .mac-terminal {
-        width: calc(100vw - 32px);
+        width: calc(100% - 32px);
         left: 16px;
         top: 60px;
         max-height: 80vh;
