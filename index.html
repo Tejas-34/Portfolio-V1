@@ -4585,13 +4585,75 @@
       const commands = {
         help: () => [
           "Available commands:",
-          "  about      - learn more about me",
-          "  projects   - view my key works",
-          "  journey    - my academic & career path",
-          "  skills     - technical stack",
-          "  resume     - download my CV",
-          "  contact    - get in touch",
-          "  clear      - clear terminal screen"
+          "  about        - learn more about me",
+          "  projects     - view my key works",
+          "  journey      - my academic & career path",
+          "  skills       - technical stack",
+          "  resume       - download my CV",
+          "  contact      - get in touch",
+          "  clear        - clear terminal screen",
+          "  -- Fun Commands --",
+          "  motivation   - random dev quote",
+          "  coffee       - caffeine status",
+          "  bug          - today's bug stats",
+          "  status       - system status",
+          "  why-terminal - why does this exist?",
+          "  reality      - developer reality",
+          "  sleep        - sleep stats",
+          "  hireme       - why hire me?",
+          "  life         - current life status"
+        ],
+        motivation: () => {
+          const quotes = [
+            "It's not a bug. It's an undocumented feature.",
+            "Keep coding. The compiler will eventually give up.",
+            "I write code so I don't have to talk to people.",
+            "Ctrl+C, Ctrl+V, praying it works."
+          ];
+          return [quotes[Math.floor(Math.random() * quotes.length)]];
+        },
+        coffee: () => [
+          "Status: ☕ Loading...",
+          "Caffeine level: 85%",
+          "Warning: Coffee reserves dropping. Refill required to maintain code quality."
+        ],
+        bug: () => [
+          "Found 17 bugs today.",
+          "Fixed 2.",
+          "The remaining bugs are now considered features."
+        ],
+        status: () => [
+          "CPU Usage: 95%",
+          "Coffee Level: Critical",
+          "Sleep: Undefined",
+          "Current Mission: Build impactful products 🚀"
+        ],
+        "why-terminal": () => [
+          "Because every developer portfolio started looking the same.",
+          "So I added a terminal to increase recruiter attraction by 73%."
+        ],
+        reality: () => [
+          "Expectation: 10x Developer who writes perfect code on the first try.",
+          "Reality: Spends 4 hours fixing a typo.",
+          "Still ships it anyway. 🚢"
+        ],
+        sleep: () => [
+          "Sleep? What is sleep?",
+          "Error 404: Sleep not found in developer's dictionary."
+        ],
+        hireme: () => [
+          "Reasons to hire Tejas:",
+          "✔ Builds full-stack applications",
+          "✔ Loves solving real problems",
+          "✔ Learns fast",
+          "✔ Survived JavaScript errors",
+          "✔ Still debugging life successfully"
+        ],
+        life: () => [
+          "Currently:",
+          "Eating bugs 🐛",
+          "Fixing code 💻",
+          "Learning continuously 📚"
         ],
         about: () => [
           "Tejas Patare — Full Stack Developer & Data Science Student.",
@@ -4655,7 +4717,16 @@
             const output = commands[cleanCmd]();
             output.forEach(line => addLine(line));
           } else {
+            const suggestions = [
+              "Are you sure you typed that right?",
+              "Maybe try 'help' instead.",
+              "That command is above my paygrade.",
+              "Did you mean to type 'coffee'?",
+              "404: Command not found in this universe."
+            ];
+            const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
             addLine(`zsh: command not found: ${cmd}`, "error");
+            addLine(randomSuggestion, "error");
           }
         }
       };
@@ -4666,8 +4737,16 @@
         toggle.setAttribute("aria-expanded", state.isOpen);
         if (state.isOpen) {
           if (!state.initialized) {
-            addLine("Welcome to Tejas's Universe v1.0", "success");
-            addLine("Type 'help' to see available commands.");
+            addLine("Every portfolio looked the same.");
+            addLine("So I built a terminal.");
+            addLine("");
+            addLine("Initializing developer portfolio...");
+            addLine("Loading projects...");
+            addLine("Fixing bugs...");
+            addLine("Pretending everything works perfectly...");
+            addLine("");
+            addLine("System Ready", "success");
+            addLine("Type 'help' to continue.", "success");
             state.initialized = true;
           }
           setTimeout(() => input.focus(), 100);
