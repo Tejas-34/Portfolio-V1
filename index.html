@@ -2232,7 +2232,7 @@
 
     .modal-card {
       width: min(780px, 100%);
-      padding: 1rem;
+      padding: 0.75rem 1rem;
       border-radius: 22px;
       background: rgba(10, 12, 20, 0.92);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2244,17 +2244,32 @@
       align-items: start;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 0.5rem;
     }
 
-    .modal-top h3 {
+    #modalTitle {
       margin: 0 0 6px;
       font-family: "Space Grotesk", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
     }
 
-    .modal-top p {
+    #modalMeta {
       margin: 0;
-      color: var(--muted);
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    #modalDesc {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.25);
+      font-style: italic;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
     }
 
     .modal-close {
@@ -3015,6 +3030,99 @@
         scroll-behavior: auto !important;
       }
     }
+  
+    /* --- NEW CERTIFICATE CARD STYLES --- */
+    .certificate-card {
+      background: #0d0d0d !important;
+      border: 1px solid rgba(255,255,255,0.07) !important;
+      border-radius: 10px !important;
+      padding: 0 !important;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease !important;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-4px) !important;
+      border-color: rgba(255,255,255,0.14) !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+    }
+
+    .certificate-thumb {
+      width: 100% !important;
+      height: 180px !important;
+      aspect-ratio: auto !important;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0 !important;
+      margin-bottom: 0 !important;
+      border: none !important;
+      background: transparent !important;
+    }
+
+    .certificate-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .certificate-card:hover .certificate-thumb img {
+      transform: scale(1.03);
+    }
+
+    .certificate-info {
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .cert-badge {
+      align-self: flex-start;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.5);
+      border: none;
+    }
+
+    .certificate-card h3 {
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      color: white !important;
+      margin: 0 !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.4 !important;
+    }
+
+    .certificate-card p {
+      font-size: 0.78rem !important;
+      color: rgba(255,255,255,0.35) !important;
+      margin: 0 !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.5 !important;
+    }
+
+    .cert-meta {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 2px;
+    }
+    
+    .certificate-meta {
+      display: none !important;
+    }
+
   </style>
 </head>
 
@@ -3529,118 +3637,183 @@
         <button class="filter-button" data-filter="Extra-curricular" type="button">Extra-curricular</button>
       </div>
       <div class="certificates-grid" id="certificateGrid">
-        <article class="glass-card certificate-card" data-category="Degrees" data-title="Diploma in Programming" data-issuer="Indian Institute of Technology Madras" data-year="30th December 2024" data-image="Certificates/Diploma%20in%20Programming-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/Diploma%20in%20Programming-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Diploma in Programming</h3>
-          <p>Completed the requirements for the Diploma in Programming.</p>
-          <div class="certificate-meta"><span>IIT Madras</span><span>Dec 2024</span></div>
+        <article class="certificate-card" data-category="Degrees" data-title="Diploma in Programming" data-issuer="Indian Institute of Technology Madras" data-year="30th December 2024" data-image="Certificates/Diploma%20in%20Programming-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Diploma%20in%20Programming-1.png" alt="Diploma in Programming">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Programming</span>
+            <h3>Diploma in Programming</h3>
+            <p>Completed the requirements for the Diploma in Programming.</p>
+            <div class="cert-meta">IIT Madras &middot; Dec 2024</div>
+          </div>
         </article>
-        <article class="glass-card certificate-card" data-category="Degrees" data-title="Foundational Level in Programming and Data Science" data-issuer="Indian Institute of Technology Madras" data-year="January 2023" data-image="Certificates/Foundation%20Certificate-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/Foundation%20Certificate-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Foundational Level in Programming and Data Science</h3>
-          <p>Successfully completed the Foundational Level in Programming and Data Science.</p>
-          <div class="certificate-meta"><span>IIT Madras</span><span>Jan 2023</span></div>
+        <article class="certificate-card" data-category="Degrees" data-title="Foundational Level in Programming and Data Science" data-issuer="Indian Institute of Technology Madras" data-year="January 2023" data-image="Certificates/Foundation%20Certificate-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Foundation%20Certificate-1.png" alt="Foundational Level in Programming and Data Science">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Data Science</span>
+            <h3>Foundational Level in Programming and Data Science</h3>
+            <p>Successfully completed the Foundational Level in Programming and Data Science.</p>
+            <div class="cert-meta">IIT Madras &middot; Jan 2023</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Soft Skills" data-title="Certificate of Appreciation - Leader Group 267" data-issuer="IIT Madras B.S. Degree Program" data-year="September 2023 to August 2024" data-image="Certificates/Group%20Leader-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/Group%20Leader-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Certificate of Appreciation - Leader Group 267</h3>
-          <p>Awarded for outstanding contribution made to the General Student Body as a Group Leader.</p>
-          <div class="certificate-meta"><span>IIT Madras</span><span>2023-2024</span></div>
+        <article class="certificate-card" data-category="Soft Skills" data-title="Certificate of Appreciation - Leader Group 267" data-issuer="IIT Madras B.S. Degree Program" data-year="September 2023 to August 2024" data-image="Certificates/Group%20Leader-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Group%20Leader-1.png" alt="Certificate of Appreciation - Leader Group 267">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Leadership</span>
+            <h3>Certificate of Appreciation - Leader Group 267</h3>
+            <p>Awarded for outstanding contribution made to the General Student Body as a Group Leader.</p>
+            <div class="cert-meta">IIT Madras &middot; 2023-2024</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Soft Skills" data-title="Guest Speaker - Unlock the Power of Data Science" data-issuer="Marathwada Mitra Mandal's College of Commerce" data-year="07/03/2025" data-image="Certificates/MMCC1.jpeg">
-          <div class="certificate-thumb" style="background-image: url('Certificates/MMCC1.jpeg'); background-size: cover; background-position: center;"></div>
-          <h3>Guest Speaker - Data Science</h3>
-          <p>Served as a guest speaker to conduct a hands-on data science experience and real-life projects implementation session.</p>
-          <div class="certificate-meta"><span>MMCC</span><span>Mar 2025</span></div>
+        <article class="certificate-card" data-category="Soft Skills" data-title="Guest Speaker - Unlock the Power of Data Science" data-issuer="Marathwada Mitra Mandal's College of Commerce" data-year="07/03/2025" data-image="Certificates/MMCC1.jpeg">
+          <div class="certificate-thumb">
+            <img src="Certificates/MMCC1.jpeg" alt="Guest Speaker - Unlock the Power of Data Science">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Workshop</span>
+            <h3>Guest Speaker - Unlock the Power of Data Science</h3>
+            <p>Served as a guest speaker to conduct a hands-on data science experience and real-life projects implementation session.</p>
+            <div class="cert-meta">MMCC &middot; Mar 2025</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Programming" data-title="Web Development Peer To Peer Session" data-issuer="Google Developer Group, Fergusson College Pune" data-year="29th January 2026" data-image="Certificates/Peer%20To%20Peer%20Session%20.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/Peer%20To%20Peer%20Session%20.png'); background-size: cover; background-position: center;"></div>
-          <h3>Web Development P2P Session</h3>
-          <p>Attended the Web Development Peer To Peer session.</p>
-          <div class="certificate-meta"><span>GDG Fergusson College</span><span>Jan 2026</span></div>
+        <article class="certificate-card" data-category="Programming" data-title="Web Development Peer To Peer Session" data-issuer="Google Developer Group, Fergusson College Pune" data-year="29th January 2026" data-image="Certificates/Peer%20To%20Peer%20Session%20.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Peer%20To%20Peer%20Session%20.png" alt="Web Development Peer To Peer Session">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Workshop</span>
+            <h3>Web Development Peer To Peer Session</h3>
+            <p>Attended the Web Development Peer To Peer session.</p>
+            <div class="cert-meta">GDG Fergusson College &middot; Jan 2026</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Programming" data-title="Certificate of Internship - Web Development" data-issuer="PharmaAI" data-year="January 2025 to February 2025" data-image="Certificates/PharmaAI-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/PharmaAI-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Internship - Web Development</h3>
-          <p>Completed a web development internship, focusing on developing and optimizing web applications and enhancing user interfaces.</p>
-          <div class="certificate-meta"><span>PharmaAI</span><span>Jan-Feb 2025</span></div>
+        <article class="certificate-card" data-category="Programming" data-title="Certificate of Internship - Web Development" data-issuer="PharmaAI" data-year="January 2025 to February 2025" data-image="Certificates/PharmaAI-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/PharmaAI-1.png" alt="Certificate of Internship - Web Development">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Internship</span>
+            <h3>Certificate of Internship - Web Development</h3>
+            <p>Completed a web development internship, focusing on developing and optimizing web applications and enhancing user interfaces.</p>
+            <div class="cert-meta">PharmaAI &middot; Jan-Feb 2025</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Smart India Hackathon 2023" data-issuer="IIT Madras / Ministry of Education" data-year="25th September 2023" data-image="Certificates/Tejas%20Patare-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/Tejas%20Patare-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Smart India Hackathon 2023</h3>
-          <p>Participated in the Internal Hackathon for SIH 2023 as part of team AyurTech.ai.</p>
-          <div class="certificate-meta"><span>IIT Madras</span><span>Sep 2023</span></div>
+        <article class="certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Smart India Hackathon 2023" data-issuer="IIT Madras / Ministry of Education" data-year="25th September 2023" data-image="Certificates/Tejas%20Patare-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Tejas%20Patare-1.png" alt="Certificate of Participation - Smart India Hackathon 2023">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Hackathons</span>
+            <h3>Certificate of Participation - Smart India Hackathon 2023</h3>
+            <p>Participated in the Internal Hackathon for SIH 2023 as part of team AyurTech.ai.</p>
+            <div class="cert-meta">IIT Madras &middot; Sep 2023</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Programming" data-title="Internship Completion - Full Stack Development" data-issuer="Sudha Gopalakrishnan Brain Centre, IIT Madras" data-year="02-02-2026 to 31-03-2026" data-image="Certificates/Tejas%20certificate-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/Tejas%20certificate-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Internship - Full Stack Development</h3>
-          <p>Successfully completed an internship actively involved in the Full Stack Development Team.</p>
-          <div class="certificate-meta"><span>SGBC IIT Madras</span><span>Feb-Mar 2026</span></div>
+        <article class="certificate-card" data-category="Programming" data-title="Internship Completion - Full Stack Development" data-issuer="Sudha Gopalakrishnan Brain Centre, IIT Madras" data-year="02-02-2026 to 31-03-2026" data-image="Certificates/Tejas%20certificate-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Tejas%20certificate-1.png" alt="Internship Completion - Full Stack Development">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Internship</span>
+            <h3>Internship Completion - Full Stack Development</h3>
+            <p>Successfully completed an internship actively involved in the Full Stack Development Team.</p>
+            <div class="cert-meta">SGBC IIT Madras &middot; Feb-Mar 2026</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Cloud" data-title="Understanding Google Cloud Platform" data-issuer="IIT Madras BS Program" data-year="17th January 2025 - 19th January 2025" data-image="Certificates/Understanding%20GCP-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/Understanding%20GCP-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Understanding Google Cloud Platform</h3>
-          <p>Successfully completed the workshop on Understanding Google Cloud Platform.</p>
-          <div class="certificate-meta"><span>IIT Madras</span><span>Jan 2025</span></div>
+        <article class="certificate-card" data-category="Cloud" data-title="Understanding Google Cloud Platform" data-issuer="IIT Madras BS Program" data-year="17th January 2025 - 19th January 2025" data-image="Certificates/Understanding%20GCP-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Understanding%20GCP-1.png" alt="Understanding Google Cloud Platform">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Cloud</span>
+            <h3>Understanding Google Cloud Platform</h3>
+            <p>Successfully completed the workshop on Understanding Google Cloud Platform.</p>
+            <div class="cert-meta">IIT Madras &middot; Jan 2025</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Byte Battle" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(1).png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/certificate%20(1).png'); background-size: cover; background-position: center;"></div>
-          <h3>Byte Battle Participation</h3>
-          <p>Recognized for active participation in Byte Battle at IITM Paradox'23.</p>
-          <div class="certificate-meta"><span>IITM Paradox'23</span><span>2023</span></div>
+        <article class="certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Byte Battle" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(1).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(1).png" alt="Certificate of Participation - Byte Battle">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Hackathons</span>
+            <h3>Certificate of Participation - Byte Battle</h3>
+            <p>Recognized for active participation in Byte Battle at IITM Paradox'23.</p>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Squid Game" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(2).png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/certificate%20(2).png'); background-size: cover; background-position: center;"></div>
-          <h3>Squid Game Participation</h3>
-          <p>Recognized for active participation in Squid Game at IITM Paradox'23.</p>
-          <div class="certificate-meta"><span>IITM Paradox'23</span><span>2023</span></div>
+        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Squid Game" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(2).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(2).png" alt="Certificate of Participation - Squid Game">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Squid Game</h3>
+            <p>Recognized for active participation in Squid Game at IITM Paradox'23.</p>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Paradox Premier League" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(3).png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/certificate%20(3).png'); background-size: cover; background-position: center;"></div>
-          <h3>Paradox Premier League</h3>
-          <p>Recognized for active participation in Paradox Premier League at IITM Paradox'23.</p>
-          <div class="certificate-meta"><span>IITM Paradox'23</span><span>2023</span></div>
+        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Paradox Premier League" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(3).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(3).png" alt="Certificate of Participation - Paradox Premier League">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Paradox Premier League</h3>
+            <p>Recognized for active participation in Paradox Premier League at IITM Paradox'23.</p>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Badminton" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(4).png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/certificate%20(4).png'); background-size: cover; background-position: center;"></div>
-          <h3>Badminton Participation</h3>
-          <p>Recognized for active participation in Badminton at IITM Paradox'23.</p>
-          <div class="certificate-meta"><span>IITM Paradox'23</span><span>2023</span></div>
+        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Badminton" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(4).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(4).png" alt="Certificate of Participation - Badminton">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Badminton</h3>
+            <p>Recognized for active participation in Badminton at IITM Paradox'23.</p>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Slow Cycling" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(5).png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/certificate%20(5).png'); background-size: cover; background-position: center;"></div>
-          <h3>Slow Cycling Participation</h3>
-          <p>Recognized for active participation in Slow Cycling at IITM Paradox'23.</p>
-          <div class="certificate-meta"><span>IITM Paradox'23</span><span>2023</span></div>
+        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Slow Cycling" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(5).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(5).png" alt="Certificate of Participation - Slow Cycling">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Slow Cycling</h3>
+            <p>Recognized for active participation in Slow Cycling at IITM Paradox'23.</p>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Programming" data-title="Certificate of Appreciation - Python Coding Challenge" data-issuer="IITM B.S. Degree Program" data-year="2024" data-image="Certificates/certificate-1.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/certificate-1.png'); background-size: cover; background-position: center; border-radius: 8px;"></div>
-          <h3>Python Coding Challenge</h3>
-          <p>Active participation in Python Coding Challenge at IITM Paradox in Margazhi'24.</p>
-          <div class="certificate-meta"><span>IITM Margazhi'24</span><span>2024</span></div>
+        <article class="certificate-card" data-category="Programming" data-title="Certificate of Appreciation - Python Coding Challenge" data-issuer="IITM B.S. Degree Program" data-year="2024" data-image="Certificates/certificate-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate-1.png" alt="Certificate of Appreciation - Python Coding Challenge">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Programming</span>
+            <h3>Certificate of Appreciation - Python Coding Challenge</h3>
+            <p>Active participation in Python Coding Challenge at IITM Paradox in Margazhi'24.</p>
+            <div class="cert-meta">IITM Margazhi'24 &middot; 2024</div>
+          </div>
         </article>
-
-        <article class="glass-card certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Hack-O-Pitch 2.0" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate.png">
-          <div class="certificate-thumb" style="background-image: url('Certificates/certificate.png'); background-size: cover; background-position: center;"></div>
-          <h3>Hack-O-Pitch 2.0</h3>
-          <p>Recognized for active participation in Hack-O-Pitch 2.0 at IITM Paradox'23.</p>
-          <div class="certificate-meta"><span>IITM Paradox'23</span><span>2023</span></div>
+        <article class="certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Hack-O-Pitch 2.0" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate.png" alt="Certificate of Participation - Hack-O-Pitch 2.0">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Hackathons</span>
+            <h3>Certificate of Participation - Hack-O-Pitch 2.0</h3>
+            <p>Recognized for active participation in Hack-O-Pitch 2.0 at IITM Paradox'23.</p>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+          </div>
         </article>
-      </div>
-    </section>
+      </section>
 
     <section class="reveal" id="contact">
       <div class="section-heading">
@@ -3664,6 +3837,7 @@
         <div>
           <h3 id="modalTitle">Certificate Title</h3>
           <p id="modalMeta">Issuing Body • Year</p>
+          <p id="modalDesc"></p>
         </div>
         <button class="modal-close" id="modalClose" type="button" aria-label="Close certificate preview">
           <i class="fa-solid fa-xmark"></i>
@@ -3829,10 +4003,15 @@
       card.addEventListener("click", () => {
         modalTitle.textContent = card.dataset.title;
         modalMeta.textContent = `${card.dataset.issuer} • ${card.dataset.year}`;
+        const modalDesc = document.getElementById("modalDesc");
+        if (modalDesc) {
+          const pTag = card.querySelector('p');
+          modalDesc.textContent = pTag ? pTag.textContent : "";
+        }
         
         const previewEl = document.getElementById("modalPreview");
         if (card.dataset.image) {
-          previewEl.innerHTML = `<img src="${card.dataset.image}" alt="${card.dataset.title}" style="width: 100%; height: auto; border-radius: 8px; object-fit: contain; max-height: 60vh;">`;
+          previewEl.innerHTML = `<img src="${card.dataset.image}" alt="${card.dataset.title}" style="width: 100%; height: auto; border-radius: 8px; object-fit: contain; max-height: 75vh;">`;
         } else {
           previewEl.innerHTML = "";
         }
