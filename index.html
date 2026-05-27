@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700;1,800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -1827,497 +1827,234 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     }
 
-    /* ── Journey Section ── */
+    /* ── Journey Section — Redesign ── */
     #journey {
       position: relative;
       overflow: visible;
       padding: 80px 0;
     }
 
+    /* Hero heading — "The road so far." */
     .journey-hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: center;
-      margin-bottom: 0px;
+      margin-bottom: 64px;
     }
 
-    .journey-hero-desc {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: rgba(200, 212, 236, 0.65);
-      margin: 16px 0 32px;
-      max-width: 560px;
+    .journey-heading {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.15;
+      margin: 0;
     }
 
-    /* Stats Grid */
-    .journey-stats-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      max-width: 540px;
-    }
-
-    .j-stat-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 20px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(14, 21, 36, 0.65), rgba(9, 14, 26, 0.5));
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-    }
-
-    .j-stat-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .j-stat-icon.cyan {
-      background: rgba(0, 245, 212, 0.1);
+    .journey-heading-italic {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
       color: var(--accent);
+      font-weight: 400;
     }
 
-    .j-stat-icon.green {
-      background: rgba(71, 162, 72, 0.12);
-      color: #42b883;
-    }
-
-    .j-stat-icon.purple {
-      background: rgba(155, 114, 255, 0.1);
-      color: var(--accent-2);
-    }
-
-    .j-stat-icon.indigo {
-      background: rgba(54, 92, 220, 0.12);
-      color: #82aaff;
-    }
-
-    .j-stat-text {
+    /* Timeline cards container */
+    .journey-timeline {
+      max-width: 900px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 0;
     }
 
-    .j-stat-text strong {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1;
-    }
-
-    .j-stat-text span {
-      font-size: 0.76rem;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    /* Glowing curved road */
-    .glowing-road-container {
+    /* Individual journey step */
+    .journey-step {
       position: relative;
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto;
-      animation: floatRoad 6s ease-in-out infinite;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0;
+      padding: 40px 0 40px 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    @keyframes floatRoad {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
+    .journey-step:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .road-pin {
-      animation: pulsePin 2.5s infinite alternate;
-    }
-
-    @keyframes pulsePin {
-      0% {
-        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
-      }
-
-      100% {
-        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
-      }
-    }
-
-    /* Timeline Title */
-    .journey-title-block {
-      margin-bottom: 48px;
-    }
-
-    .journey-title-block h3 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0 0 10px;
-      letter-spacing: -0.02em;
-    }
-
-    .j-title-bar {
-      width: 48px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-      box-shadow: 0 0 8px rgba(0, 245, 212, 0.4);
-    }
-
-    /* Timeline spine & container */
-    .timeline-container {
-      position: relative;
-      max-width: 880px;
-      margin: 0 auto;
-      padding-left: 140px;
-      /* Space for the left node text column */
-      box-sizing: border-box;
-    }
-
-    .timeline-spine {
-      position: absolute;
-      left: 170px;
-      /* Enters right in the middle of spine column */
-      top: 24px;
-      bottom: 24px;
-      width: 2px;
-      background: linear-gradient(180deg, rgba(0, 245, 212, 0.4), rgba(155, 114, 255, 0.4), rgba(245, 197, 66, 0.15));
-      border-radius: 999px;
-      z-index: 1;
-    }
-
-    .timeline-item {
-      position: relative;
-      display: flex;
-      gap: 40px;
-      margin-bottom: 24px;
-    }
-
-    /* Left Icon Column */
-    .timeline-left {
-      position: absolute;
-      left: -140px;
-      width: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 6px;
-      margin-top: 14px;
-    }
-
-    .node-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.88rem;
-      transition: all 0.3s ease;
-    }
-
-    .node-keyword {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-
-    /* Timeline Dots column */
-    .timeline-dot-container {
-      position: relative;
-      width: 60px;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      z-index: 2;
-    }
-
-    .timeline-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--text);
-      border: 3.5px solid #070b12;
-      margin-top: 24px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Glassmorphic timeline cards on the right */
-    .timeline-card {
-      flex: 1;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 20px 24px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(14, 21, 36, 0.7), rgba(9, 14, 26, 0.52));
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(14px);
-      transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-      overflow: hidden;
-    }
-
-    .card-glow-edge {
+    /* Left accent line — outside everything, draws top→bottom on hover */
+    .journey-step::before {
+      content: '';
       position: absolute;
       left: 0;
       top: 0;
       bottom: 0;
-      width: 4px;
-      border-radius: 4px 0 0 4px;
-      transition: width 0.3s ease;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      border-radius: 3px;
+      transform: scaleY(0);
+      transform-origin: top center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Colors and states mapping */
-    .timeline-item.cyan-theme .node-icon {
-      color: var(--accent);
-      border-color: rgba(0, 245, 212, 0.2);
+    .journey-step:hover::before {
+      transform: scaleY(1);
     }
 
-    .timeline-item.cyan-theme .node-keyword {
-      color: var(--accent);
+    /* Left number column */
+    .journey-step-number {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: rgba(0, 245, 212, 0.1);
+      line-height: 1;
+      padding-top: 6px;
+      user-select: none;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
     }
 
-    .timeline-item.cyan-theme .timeline-dot {
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(0, 245, 212, 0.3);
-    }
-
-    .timeline-item.cyan-theme .card-glow-edge {
-      background: var(--accent);
-    }
-
-    .timeline-item.cyan-theme .card-tag {
-      background: rgba(0, 245, 212, 0.08);
-      border: 1px solid rgba(0, 245, 212, 0.16);
-      color: var(--accent);
-    }
-
-    .timeline-item.purple-theme .node-icon {
-      color: var(--accent-2);
-      border-color: rgba(155, 114, 255, 0.2);
-    }
-
-    .timeline-item.purple-theme .node-keyword {
-      color: var(--accent-2);
-    }
-
-    .timeline-item.purple-theme .timeline-dot {
-      background: var(--accent-2);
-      box-shadow: 0 0 10px rgba(155, 114, 255, 0.3);
-    }
-
-    .timeline-item.purple-theme .card-glow-edge {
-      background: var(--accent-2);
-    }
-
-    .timeline-item.purple-theme .card-tag {
-      background: rgba(155, 114, 255, 0.08);
-      border: 1px solid rgba(155, 114, 255, 0.16);
-      color: #c9b8ff;
-    }
-
-    .timeline-item.blue-theme .node-icon {
-      color: #00bbf9;
-      border-color: rgba(0, 187, 249, 0.2);
-    }
-
-    .timeline-item.blue-theme .node-keyword {
-      color: #00bbf9;
-    }
-
-    .timeline-item.blue-theme .timeline-dot {
-      background: #00bbf9;
-      box-shadow: 0 0 10px rgba(0, 187, 249, 0.3);
-    }
-
-    .timeline-item.blue-theme .card-glow-edge {
-      background: #00bbf9;
-    }
-
-    .timeline-item.blue-theme .card-tag {
-      background: rgba(0, 187, 249, 0.08);
-      border: 1px solid rgba(0, 187, 249, 0.16);
-      color: #00bbf9;
-    }
-
-    .timeline-item.green-theme .node-icon {
-      color: #42b883;
-      border-color: rgba(66, 184, 131, 0.2);
-    }
-
-    .timeline-item.green-theme .node-keyword {
-      color: #42b883;
-    }
-
-    .timeline-item.green-theme .timeline-dot {
-      background: #42b883;
-      box-shadow: 0 0 10px rgba(66, 184, 131, 0.3);
-    }
-
-    .timeline-item.green-theme .card-glow-edge {
-      background: #42b883;
-    }
-
-    .timeline-item.green-theme .card-tag {
-      background: rgba(66, 184, 131, 0.08);
-      border: 1px solid rgba(66, 184, 131, 0.16);
-      color: #42b883;
-    }
-
-    .timeline-item.orange-theme .node-icon {
-      color: #ff9800;
-      border-color: rgba(255, 152, 0, 0.2);
-    }
-
-    .timeline-item.orange-theme .node-keyword {
-      color: #ff9800;
-    }
-
-    .timeline-item.orange-theme .timeline-dot {
-      background: #ff9800;
-      box-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
-    }
-
-    .timeline-item.orange-theme .card-glow-edge {
-      background: #ff9800;
-    }
-
-    .timeline-item.orange-theme .card-tag {
-      background: rgba(255, 152, 0, 0.08);
-      border: 1px solid rgba(255, 152, 0, 0.16);
-      color: #ff9800;
-    }
-
-    .timeline-item.gold-theme .node-icon {
-      color: #f5c542;
-      border-color: rgba(245, 197, 66, 0.2);
-    }
-
-    .timeline-item.gold-theme .node-keyword {
-      color: #f5c542;
-    }
-
-    .timeline-item.gold-theme .timeline-dot {
-      background: #f5c542;
-      box-shadow: 0 0 10px rgba(245, 197, 66, 0.3);
-    }
-
-    .timeline-item.gold-theme .card-glow-edge {
-      background: #f5c542;
-    }
-
-    .timeline-item.gold-theme .card-tag {
-      background: rgba(245, 197, 66, 0.08);
-      border: 1px solid rgba(245, 197, 66, 0.16);
-      color: #f5c542;
-    }
-
-    /* Interaction states */
-    .timeline-item:hover .node-icon {
-      transform: scale(1.15);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .timeline-item:hover .timeline-dot {
-      transform: scale(1.4);
-      box-shadow: 0 0 16px currentColor;
-    }
-
-    .timeline-item:hover .timeline-card {
-      border-color: rgba(255, 255, 255, 0.1);
+    .journey-step:hover .journey-step-number {
       transform: translateX(6px);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+      color: rgba(0, 245, 212, 0.3);
     }
 
-    .timeline-item:hover .card-glow-edge {
-      width: 6px;
+    /* Right content area */
+    .journey-step-content {
+      position: relative;
+      padding-left: 20px;
     }
 
-    /* Card inner elements */
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
+    /* Inner text — shifts right + brightens on hover */
+    .journey-step-keyword,
+    .journey-step-title,
+    .journey-step-inst,
+    .journey-step-desc {
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
     }
 
-    .card-date {
+    .journey-step:hover .journey-step-keyword,
+    .journey-step:hover .journey-step-title,
+    .journey-step:hover .journey-step-inst,
+    .journey-step:hover .journey-step-desc {
+      transform: translateX(8px);
+    }
+
+    /* Keyword label */
+    .journey-step-keyword {
       font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: rgba(240, 244, 255, 0.95);
-      letter-spacing: 0.01em;
-    }
-
-    .card-tag {
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.65rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-
-    .card-content {
-      flex: 1;
-    }
-
-    .card-content h4 {
-      margin: 0 0 4px;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.015em;
-    }
-
-    .card-inst {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(0, 245, 212, 0.25);
       margin: 0 0 8px;
-      font-size: 0.84rem;
-      color: rgba(200, 212, 236, 0.55);
+    }
+
+    .journey-step:hover .journey-step-keyword {
+      color: rgba(0, 245, 212, 0.7);
+    }
+
+    /* Title */
+    .journey-step-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+      margin: 0 0 6px;
+      line-height: 1.3;
+    }
+
+    .journey-step:hover .journey-step-title {
+      color: #ffffff;
+    }
+
+    /* Institution */
+    .journey-step-inst {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.88rem;
       font-style: italic;
+      color: rgba(155, 114, 255, 0.3);
+      margin: 0 0 16px;
     }
 
-    .card-desc {
+    .journey-step:hover .journey-step-inst {
+      color: rgba(155, 114, 255, 0.65);
+    }
+
+    /* Description */
+    .journey-step-desc {
+      font-size: 0.92rem;
+      line-height: 1.72;
+      color: rgba(200, 212, 236, 0.3);
       margin: 0;
-      font-size: 0.84rem;
-      color: var(--muted);
-      line-height: 1.6;
+      max-width: 620px;
     }
 
-    .card-right-icon {
-      font-size: 2.2rem;
-      color: rgba(255, 255, 255, 0.03);
-      transition: color 0.4s ease, transform 0.4s ease;
+    .journey-step:hover .journey-step-desc {
+      color: rgba(200, 212, 236, 0.7);
+    }
+
+    /* Meta row — date & tag badge, positioned top-right (NO shift on hover) */
+    .journey-step-meta {
+      position: absolute;
+      top: 0;
+      right: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
     }
 
-    .timeline-item:hover .card-right-icon {
-      color: rgba(255, 255, 255, 0.06);
-      transform: scale(1.08) rotate(5deg);
+    .journey-step-date {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(200, 212, 236, 0.25);
+      letter-spacing: 0.02em;
+      transition: color 0.5s ease;
+    }
+
+    .journey-step:hover .journey-step-date {
+      color: rgba(200, 212, 236, 0.6);
+    }
+
+    .journey-step-tag {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 245, 212, 0.15);
+      color: rgba(0, 245, 212, 0.4);
+      background: rgba(0, 245, 212, 0.03);
+      transition: border-color 0.5s ease, color 0.5s ease;
+    }
+
+    .journey-step:hover .journey-step-tag {
+      border-color: rgba(0, 245, 212, 0.35);
+      color: rgba(0, 245, 212, 0.8);
+    }
+
+    /* Tag variants */
+    .journey-step-tag.tag-experience {
+      border-color: rgba(0, 245, 212, 0.15);
+      color: rgba(0, 245, 212, 0.4);
+      background: rgba(0, 245, 212, 0.03);
+    }
+
+    .journey-step:hover .journey-step-tag.tag-experience {
+      border-color: rgba(0, 245, 212, 0.35);
+      color: rgba(0, 245, 212, 0.8);
+    }
+
+    .journey-step-tag.tag-goal {
+      border-color: rgba(155, 114, 255, 0.15);
+      color: rgba(155, 114, 255, 0.4);
+      background: rgba(155, 114, 255, 0.03);
+    }
+
+    .journey-step:hover .journey-step-tag.tag-goal {
+      border-color: rgba(155, 114, 255, 0.35);
+      color: rgba(155, 114, 255, 0.8);
     }
 
     .projects-grid {
@@ -2869,63 +2606,27 @@
       }
 
       /* Journey Responsive Styles */
-      .journey-hero {
-        grid-template-columns: 1fr;
-        gap: 36px;
+      .journey-step {
+        grid-template-columns: 60px 1fr;
+        padding: 28px 0 28px 20px;
       }
 
-      .journey-stats-row {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 100%;
+      .journey-step-number {
+        font-size: 1.8rem;
       }
 
-      .timeline-container {
-        padding-left: 40px;
+      .journey-step-content {
+        padding-left: 16px;
       }
 
-      .timeline-spine {
-        left: 56px;
-      }
-
-      .timeline-item {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .timeline-left {
+      .journey-step-meta {
         position: relative;
-        left: 0;
-        width: auto;
+        top: auto;
+        right: auto;
         flex-direction: row;
         align-items: center;
-        text-align: left;
-        gap: 10px;
-        margin-top: 0;
-        margin-left: 36px;
-      }
-
-      .timeline-dot-container {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .timeline-dot {
-        margin-top: 0;
-      }
-
-      .timeline-card {
-        padding: 16px 20px;
-        margin-left: 36px;
-      }
-
-      .card-right-icon {
-        display: none;
+        gap: 12px;
+        margin-bottom: 12px;
       }
 
       .hero-panel {
@@ -3031,30 +2732,22 @@
         padding: 10px 18px 14px;
       }
 
-      .journey-track {
-        padding-left: 28px;
+      .journey-step {
+        grid-template-columns: 1fr;
+        padding: 24px 0;
       }
 
-      .journey-node:nth-child(odd),
-      .journey-node:nth-child(even) {
-        padding-left: 28px;
+      .journey-step-number {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
       }
 
-      .journey-dot {
-        width: 10px;
-        height: 10px;
+      .journey-step-content {
+        padding-left: 12px;
       }
 
-      .journey-card {
-        padding: 14px 16px;
-      }
-
-      .journey-card h4 {
-        font-size: 0.88rem;
-      }
-
-      .journey-card p {
-        font-size: 0.76rem;
+      .journey-step-desc {
+        font-size: 0.84rem;
       }
 
       .hero-layout::before {
@@ -3466,194 +3159,119 @@
 
 
     <section class="reveal" id="journey">
-      <!-- Top Hero Header Part -->
+      <!-- Heading -->
       <div class="journey-hero">
-        <div class="j-hero-left">
-          <span class="section-kicker"><span class="kicker-dot"></span> MY JOURNEY</span>
-          <!-- <h2>From curiosity to <span class="text-gradient-purple">creating impact.</span></h2> -->
-        </div>
-
-
+        <span class="section-kicker"><span class="kicker-dot"></span> MY JOURNEY</span>
+        <h2 class="journey-heading">The road<span class="journey-heading-italic">so far.</span></h2>
       </div>
 
-      <!-- Timeline Title -->
-      <div class="journey-title-block">
-        <h3>The Road So Far</h3>
-        <div class="j-title-bar"></div>
-      </div>
+      <!-- Steps -->
+      <div class="journey-timeline">
 
-      <!-- Timeline Spine & Cards -->
-      <div class="timeline-container">
-        <div class="timeline-spine"></div>
-
-        <!-- Milestone 1 -->
-        <div class="timeline-item cyan-theme">
-          <div class="timeline-left">
-            <div class="node-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <span class="node-keyword">FOUNDATION</span>
-          </div>
-          <div class="timeline-dot-container">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="card-glow-edge"></div>
-            <div class="card-header">
-              <span class="card-date">2019 – 2021</span>
-              <span class="card-tag tag-edu">Education</span>
+        <!-- Step 01 — Foundation -->
+        <div class="journey-step">
+          <div class="journey-step-number">O1</div>
+          <div class="journey-step-content">
+            <div class="journey-step-meta">
+              <span class="journey-step-date">2019 – 2021</span>
+              <span class="journey-step-tag">EDUCATION</span>
             </div>
-            <div class="card-content">
-              <h4>Higher Secondary (Science)</h4>
-              <p class="card-inst">R.B. Narayanrao Borawake College, Shrirampur</p>
-              <p class="card-desc">This phase of life taught me independence, adaptability, and the importance of balancing responsibility with personal growth. Moving away from home, experiencing hostel life, and going through the uncertainty of the COVID period shaped me far beyond academics..</p>
-            </div>
-            <div class="card-right-icon"><i class="fa-solid fa-atom"></i></div>
+            <p class="journey-step-keyword">FOUNDATION</p>
+            <h3 class="journey-step-title">Higher Secondary (Science)</h3>
+            <p class="journey-step-inst">R.B. Narayanrao Borawake College, Shrirampur</p>
+            <p class="journey-step-desc">Hostel life and the COVID period reshaped me far beyond academics — building independence, adaptability, and the quiet strength of managing responsibility alone.</p>
           </div>
         </div>
 
-        <!-- Milestone 2 -->
-        <div class="timeline-item purple-theme">
-          <div class="timeline-left">
-            <div class="node-icon"><i class="fa-solid fa-laptop-code"></i></div>
-            <span class="node-keyword">CORE LEARNING</span>
-          </div>
-          <div class="timeline-dot-container">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="card-glow-edge"></div>
-            <div class="card-header">
-              <span class="card-date">2021 – 2025</span>
-              <span class="card-tag tag-edu">Education</span>
+        <!-- Step 02 — Core Learning -->
+        <div class="journey-step">
+          <div class="journey-step-number">O2</div>
+          <div class="journey-step-content">
+            <div class="journey-step-meta">
+              <span class="journey-step-date">2021 – 2025</span>
+              <span class="journey-step-tag">EDUCATION</span>
             </div>
-            <div class="card-content">
-              <h4>BSc Computer Science</h4>
-              <p class="card-inst">Savitribai Phule Pune University</p>
-              <p class="card-desc">This journey strengthened my understanding of core computer science concepts and helped me build a strong foundation in programming, data structures, problem-solving, and software development. Along with technical learning, it also improved my decision-making, adaptability, and confidence in shaping my career in technology.</p>
-            </div>
-            <div class="card-right-icon"><i class="fa-solid fa-desktop"></i></div>
+            <p class="journey-step-keyword">CORE LEARNING</p>
+            <h3 class="journey-step-title">BSc Computer Science</h3>
+            <p class="journey-step-inst">Savitribai Phule Pune University</p>
+            <p class="journey-step-desc">Where concepts clicked — data structures, algorithms, software development. Not just technical depth, but the confidence to pursue a career in technology on my own terms.</p>
           </div>
         </div>
 
-        <!-- Milestone 3 -->
-        <div class="timeline-item blue-theme">
-          <div class="timeline-left">
-            <div class="node-icon"><i class="fa-solid fa-brain"></i></div>
-            <span class="node-keyword">ADVANCED LEARNING</span>
-          </div>
-          <div class="timeline-dot-container">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="card-glow-edge"></div>
-            <div class="card-header">
-              <span class="card-date">2022 – 2027</span>
-              <span class="card-tag tag-edu">Education</span>
+        <!-- Step 03 — Advanced Learning -->
+        <div class="journey-step">
+          <div class="journey-step-number">O3</div>
+          <div class="journey-step-content">
+            <div class="journey-step-meta">
+              <span class="journey-step-date">2022 – 2027</span>
+              <span class="journey-step-tag">EDUCATION</span>
             </div>
-            <div class="card-content">
-              <h4>BS Data Science &amp; Applications</h4>
-              <p class="card-inst">Indian Institute of Technology Madras</p>
-              <p class="card-desc">This phase gave me a deeper understanding of technology and problem-solving — from mathematics to machine learning, statistics to improving business performance, and from computational thinking to building real-world applications. Along with technical learning, this journey also changed my mindset, helping me think bigger, learn independently, and approach problems more analytically.</p>
-            </div>
-            <div class="card-right-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <p class="journey-step-keyword">ADVANCED LEARNING</p>
+            <h3 class="journey-step-title">BS Data Science &amp; Applications</h3>
+            <p class="journey-step-inst">Indian Institute of Technology Madras</p>
+            <p class="journey-step-desc">From mathematics to machine learning, computational thinking to real-world applications. This journey changed my mindset — helping me think bigger, learn independently, and approach problems analytically.</p>
           </div>
         </div>
 
-        <!-- Milestone 4 -->
-        <div class="timeline-item green-theme">
-          <div class="timeline-left">
-            <div class="node-icon"><i class="fa-solid fa-bolt"></i></div>
-            <span class="node-keyword">FIRST STEP</span>
-          </div>
-          <div class="timeline-dot-container">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="card-glow-edge"></div>
-            <div class="card-header">
-              <span class="card-date">Jan – Feb 2025</span>
-              <span class="card-tag tag-exp">Experience</span>
+        <!-- Step 04 — First Step -->
+        <div class="journey-step">
+          <div class="journey-step-number">O4</div>
+          <div class="journey-step-content">
+            <div class="journey-step-meta">
+              <span class="journey-step-date">Jan – Feb 2025</span>
+              <span class="journey-step-tag tag-experience">EXPERIENCE</span>
             </div>
-            <div class="card-content">
-              <h4>Web Development Intern</h4>
-              <p class="card-inst">PharmaAI</p>
-              <p class="card-desc">This was my first professional experience in the tech industry. Even though it was a remote internship, attending daily meetings, building features, taking feedback, and continuously improving my work taught me a lot about real-world development, teamwork, and professional responsibility.</p>
-            </div>
-            <div class="card-right-icon"><i class="fa-solid fa-code"></i></div>
+            <p class="journey-step-keyword">FIRST STEP</p>
+            <h3 class="journey-step-title">Web Development Intern</h3>
+            <p class="journey-step-inst">PharmaAI</p>
+            <p class="journey-step-desc">My first professional step into tech. Daily stand-ups, building features, taking feedback — a remote internship that taught me real-world development, teamwork, and professional responsibility.</p>
           </div>
         </div>
 
-        <!-- Milestone 5 – Higher Education -->
-        <div class="timeline-item purple-theme">
-          <div class="timeline-left">
-            <div class="node-icon"><i class="fa-solid fa-user-graduate"></i></div>
-            <span class="node-keyword">HIGHER EDUCATION</span>
-          </div>
-          <div class="timeline-dot-container">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="card-glow-edge"></div>
-            <div class="card-header">
-              <span class="card-date">2025 – Present</span>
-              <span class="card-tag tag-edu">Education</span>
+        <!-- Step 05 — Higher Education -->
+        <div class="journey-step">
+          <div class="journey-step-number">O5</div>
+          <div class="journey-step-content">
+            <div class="journey-step-meta">
+              <span class="journey-step-date">2025 – Present</span>
+              <span class="journey-step-tag">EDUCATION</span>
             </div>
-            <div class="card-content">
-              <h4>MSc Computer Science</h4>
-              <p class="card-inst">Fergusson College, Pune</p>
-              <p class="card-desc">Pursuing a Master's degree in Computer Science to deepen my expertise in advanced computing, algorithms, and software engineering. This phase is focused on strengthening theoretical foundations while applying knowledge to real-world research and development challenges.</p>
-            </div>
-            <div class="card-right-icon"><i class="fa-solid fa-award"></i></div>
+            <p class="journey-step-keyword">HIGHER EDUCATION</p>
+            <h3 class="journey-step-title">MSc Computer Science</h3>
+            <p class="journey-step-inst">Fergusson College, Pune</p>
+            <p class="journey-step-desc">Pursuing a Master's degree to deepen expertise in advanced computing, algorithms, and software engineering — strengthening theoretical foundations while applying knowledge to real-world research challenges.</p>
           </div>
         </div>
 
-        <!-- Milestone 6 -->
-        <div class="timeline-item orange-theme">
-          <div class="timeline-left">
-            <div class="node-icon"><i class="fa-solid fa-rocket"></i></div>
-            <span class="node-keyword">LEVEL UP</span>
-          </div>
-          <div class="timeline-dot-container">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="card-glow-edge"></div>
-            <div class="card-header">
-              <span class="card-date">Feb – Mar 2026</span>
-              <span class="card-tag tag-exp">Experience</span>
+        <!-- Step 06 — Level Up -->
+        <div class="journey-step">
+          <div class="journey-step-number">O6</div>
+          <div class="journey-step-content">
+            <div class="journey-step-meta">
+              <span class="journey-step-date">Feb – Mar 2026</span>
+              <span class="journey-step-tag tag-experience">EXPERIENCE</span>
             </div>
-            <div class="card-content">
-              <h4>Full Stack Developer Intern</h4>
-              <p class="card-inst">SGBC, IIT Madras</p>
-              <p class="card-desc">This was my first onsite industry experience and also the first time I moved outside my state for work. During this internship, I worked on real-world neuroscience research projects, building production-level machine learning models and integrating them into web applications using Flask, Vue.js, PostgreSQL, ML, and REST APIs. Along with technical growth, this experience taught me collaboration, ownership, and how real product 
-                development works in a professional environment.</p>
-            </div>
-            <div class="card-right-icon"><i class="fa-solid fa-terminal"></i></div>
+            <p class="journey-step-keyword">LEVEL UP</p>
+            <h3 class="journey-step-title">Full Stack Developer Intern</h3>
+            <p class="journey-step-inst">SGBC, IIT Madras</p>
+            <p class="journey-step-desc">First onsite role — and first time moving outside my state for work. Built production ML models integrated into web apps using Flask, Vue.js, PostgreSQL, and REST APIs. Learned collaboration, ownership, and how real product development works.</p>
           </div>
         </div>
 
-        <!-- Milestone 6 -->
-        <div class="timeline-item gold-theme">
-          <div class="timeline-left">
-            <div class="node-icon"><i class="fa-solid fa-star"></i></div>
-            <span class="node-keyword">THE WHY</span>
-          </div>
-          <div class="timeline-dot-container">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="card-glow-edge"></div>
-            <div class="card-header">
-              <span class="card-date">Next →</span>
-              <span class="card-tag tag-goal">Goal</span>
+        <!-- Step 07 — The Why -->
+        <div class="journey-step">
+          <div class="journey-step-number">O7</div>
+          <div class="journey-step-content">
+            <div class="journey-step-meta">
+              <span class="journey-step-date">Next →</span>
+              <span class="journey-step-tag tag-goal">GOAL</span>
             </div>
-            <div class="card-content">
-              <h4>Building Impactful Software Products</h4>
-              <p class="card-desc">Looking ahead, my goal is to build scalable and impactful software products that solve real-world problems. I want to keep growing as an engineer, explore modern technologies, and create applications that combine strong functionality 
-                with great user experiences.</p>
-            </div>
-            <div class="card-right-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <p class="journey-step-keyword">THE WHY</p>
+            <h3 class="journey-step-title">Building Impactful Software Products</h3>
+            <p class="journey-step-desc">Looking ahead — building scalable products that solve real problems. Growing as an engineer, exploring modern technologies, and creating applications that combine strong functionality with great user experiences.</p>
           </div>
         </div>
+
       </div>
     </section>
 
