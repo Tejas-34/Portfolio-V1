@@ -3110,11 +3110,8 @@
 
     .certificate-card p {
       font-size: 0.78rem !important;
-      color: rgba(255,255,255,0.35) !important;
-      margin: 0 !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      color: rgba(255,255,255,0.5) !important;
+      margin: 4px 0 0 0 !important;
       line-height: 1.5 !important;
     }
 
@@ -3131,92 +3128,85 @@
   
     /* --- NEW PROJECT CARD STYLES --- */
     .project-card {
-      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
       background: #0f0f0f !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      border-radius: 14px !important;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease !important;
-      display: flex;
-      flex-direction: column;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      transition: transform 0.2s, border-color 0.2s !important;
+      padding: 0 !important;
     }
 
     .project-card:hover {
       transform: translateY(-4px) !important;
-      border-color: rgba(255,255,255,0.15) !important;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+      border-color: rgba(255,255,255,0.2) !important;
     }
 
     .project-media {
       height: 200px !important;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 14px 14px 0 0 !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-      background: #161616;
+      overflow: hidden !important;
+      width: 100% !important;
     }
 
     .project-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      display: block;
-    }
-
-    .project-card:hover .project-media img {
-      transform: scale(1.03);
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
     }
 
     .project-body {
-      padding: 24px !important;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
+      padding: 20px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      flex: 1 !important;
     }
 
     .project-card h3 {
-      margin: 0 0 10px !important;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.15rem !important;
-      font-weight: 600;
-      color: #fff;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      line-height: 1.4 !important;
+      color: white !important;
+      margin: 0 !important;
     }
 
     .project-card p {
-      margin: 0 0 18px !important;
-      color: rgba(255, 255, 255, 0.6) !important;
-      line-height: 1.6 !important;
-      font-size: 0.9rem !important;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      font-size: 0.82rem !important;
+      line-height: 1.7 !important;
+      color: rgba(255,255,255,0.65) !important;
+      margin: 0 !important;
     }
 
     .project-tech-stack {
-      font-size: 12px !important;
-      color: rgba(255,255,255,0.35) !important;
-      margin-top: auto;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 6px !important;
+    }
+    
+    .project-tech-stack-tag {
+      background: rgba(255,255,255,0.07) !important;
+      border-radius: 20px !important;
+      padding: 3px 10px !important;
+      font-size: 0.72rem !important;
+      color: rgba(255,255,255,0.5) !important;
     }
 
     .project-links {
-      display: flex;
-      gap: 16px;
-      margin-top: 12px;
+      margin-top: auto !important;
+      display: flex !important;
+      gap: 12px !important;
     }
 
     .project-links a {
-      font-size: 13px !important;
-      color: rgba(255,255,255,0.45) !important;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      border: none !important;
+      font-size: 0.82rem !important;
+      color: rgba(255,255,255,0.7) !important;
+      text-decoration: none !important;
+      transition: color 0.3s ease !important;
     }
 
     .project-links a:hover {
-      color: #ffffff !important;
+      color: white !important;
     }
 
   
@@ -3633,88 +3623,113 @@
         <span class="section-kicker">Projects</span>
       </div>
       <div class="projects-grid">
-<article class="project-card">
+        <article class="project-card">
           <div class="project-media">
             <img src="Projects/FocusSprint.png" alt="FocusSprint – Study & Productivity Tracker">
           </div>
           <div class="project-body">
             <h3>FocusSprint – Study & Productivity Tracker</h3>
-            <p>A productivity tracker designed for students preparing for exams and technical interviews. It helps users stay focused using timed study sessions, daily streak tracking, phone distraction counting, and focus analytics.</p>
-            <div class="project-tech-stack">Flask &middot; HTML &middot; JavaScript &middot; SQLite</div>
-          
+            <p>Built for students grinding through exam prep and coding interviews — FocusSprint combines Pomodoro-style timed sessions, daily streak tracking, and phone distraction logging into one focused dashboard. Designed to turn scattered study hours into measurable, consistent progress.</p>
+            <div class="project-tech-stack">
+              <span class="project-tech-stack-tag">Flask</span>
+              <span class="project-tech-stack-tag">HTML</span>
+              <span class="project-tech-stack-tag">JavaScript</span>
+              <span class="project-tech-stack-tag">SQLite</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Spec-Driven-Developement/tree/sdd_submission" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
           </div>
         </article>
-<article class="project-card">
+        <article class="project-card">
           <div class="project-media">
             <img src="Projects/Shramik_Setu.png" alt="Shramik Setu – Worker Hiring Platform">
           </div>
           <div class="project-body">
             <h3>Shramik Setu – Worker Hiring Platform</h3>
-            <p>A worker hiring platform where employers can post jobs and workers can apply easily. The platform supports role-based access, secure login, and streamlined communication between workers and employers.</p>
-            <div class="project-tech-stack">Django &middot; React &middot; JavaScript &middot; HTML/CSS &middot; SQLite</div>
-          
+            <p>A job portal built for India's informal construction workforce — bridging the gap between daily-wage workers and employers. Features role-based access, Google OAuth & WebAuthn passkey login, atomic job slot management to safely handle concurrent applications, and a full Swagger-documented REST API.</p>
+            <div class="project-tech-stack">
+              <span class="project-tech-stack-tag">Django</span>
+              <span class="project-tech-stack-tag">React</span>
+              <span class="project-tech-stack-tag">JavaScript</span>
+              <span class="project-tech-stack-tag">HTML/CSS</span>
+              <span class="project-tech-stack-tag">SQLite</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Shramik-Setu" target="_blank" rel="noreferrer">GitHub ↗</a>
               <a href="https://youtu.be/GOai_jApiMM?si=RrdaHGlGGAEza3U4" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
-<article class="project-card">
+        <article class="project-card">
           <div class="project-media">
             <img src="Projects/IESCP  V2.png" alt="IESCP – Influencer Sponsorship Coordination Platform">
           </div>
           <div class="project-body">
             <h3>IESCP – Influencer Sponsorship Coordination Platform</h3>
-            <p>A platform that connects sponsors with influencers for brand collaborations and campaign management. Users can manage campaigns, sponsorship requests, and collaboration activities.</p>
-            <div class="project-tech-stack">Vue.js &middot; Flask &middot; SQLite &middot; Bootstrap</div>
-          
+            <p>A production-grade platform connecting brands with influencers for campaign collaboration. Sponsors manage campaigns and send ad requests; influencers negotiate, accept, or reject deals. Powered by Celery background jobs for email automation, Redis caching for faster dashboards, and CSV report exports.</p>
+            <div class="project-tech-stack">
+              <span class="project-tech-stack-tag">Vue.js</span>
+              <span class="project-tech-stack-tag">Flask</span>
+              <span class="project-tech-stack-tag">SQLite</span>
+              <span class="project-tech-stack-tag">Bootstrap</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/Tejas-34/IESCP_Vesrion2" target="_blank" rel="noreferrer">GitHub ↗</a>
               <a href="https://youtu.be/X5uDIE-h_oc?si=AuxsOmEWXgy0U_wW" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
-<article class="project-card">
+        <article class="project-card">
           <div class="project-media">
             <img src="Projects/IESCP  V1.png" alt="IESCP V1 – Basic Influencer Collaboration Platform">
           </div>
           <div class="project-body">
             <h3>IESCP V1 – Basic Influencer Collaboration Platform</h3>
-            <p>A simple influencer collaboration platform created as part of an academic project. It allows sponsors and influencers to manage profiles, campaigns, and collaboration requests.</p>
-            <div class="project-tech-stack">Flask &middot; HTML &middot; CSS &middot; Bootstrap</div>
-          
+            <p>The foundation that became V2. Built as an IIT Madras coursework project using Flask and Jinja2 templates, this version established core CRUD flows — campaign creation, ad request management, and role-based dashboards for admins, sponsors, and influencers. The lessons learned here directly shaped V2's architecture.</p>
+            <div class="project-tech-stack">
+              <span class="project-tech-stack-tag">Flask</span>
+              <span class="project-tech-stack-tag">HTML</span>
+              <span class="project-tech-stack-tag">CSS</span>
+              <span class="project-tech-stack-tag">Bootstrap</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Mad1-Project-IESCP" target="_blank" rel="noreferrer">GitHub ↗</a>
               <a href="https://youtu.be/oMvhajtcqk4?si=C6V8hhU65ki_IMmS" target="_blank" rel="noreferrer">Demo ↗</a>
             </div>
           </div>
         </article>
-<article class="project-card">
+        <article class="project-card">
           <div class="project-media">
             <img src="Projects/Addressing-Inventory-and-Profitability-Challenges-at-Graduate-Chai.png" alt="Graduate Chai – Inventory & Profitability Analysis">
           </div>
           <div class="project-body">
             <h3>Graduate Chai – Inventory & Profitability Analysis</h3>
-            <p>A business analysis project focused on inventory operations, sales trends, and profitability challenges in a tea franchise business to support better decision-making.</p>
-            <div class="project-tech-stack">Python &middot; Pandas &middot; Excel &middot; Jupyter Notebook</div>
-          
+            <p>A real-world business analysis for Graduate Chai, a tea franchise with 450+ outlets across India. Used ABC analysis, market basket analysis, and SARIMA forecasting to find that one ingredient drove ~80% of revenue, Fridays were peak sales days, and product bundling could meaningfully lift average order value.</p>
+            <div class="project-tech-stack">
+              <span class="project-tech-stack-tag">Python</span>
+              <span class="project-tech-stack-tag">Pandas</span>
+              <span class="project-tech-stack-tag">Excel</span>
+              <span class="project-tech-stack-tag">Jupyter Notebook</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Addressing-Inventory-and-Profitability-Challenges-at-Graduate-Chai" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
           </div>
         </article>
-<article class="project-card">
+        <article class="project-card">
           <div class="project-media">
             <img src="Projects/CinemaForcasting.png" alt="Cinema Audience Forecasting System">
           </div>
           <div class="project-body">
             <h3>Cinema Audience Forecasting System</h3>
-            <p>A machine learning project designed to predict audience turnout and sales patterns for cinema stores using historical sales data and forecasting insights.</p>
-            <div class="project-tech-stack">Python &middot; Scikit-learn &middot; Pandas &middot; Jupyter Notebook</div>
-          
+            <p>A Kaggle competition ML project from IIT Madras's Machine Learning Practice course. Trained and compared Random Forest, LightGBM, and Extra Trees regressors, combined using a Voting Regressor ensemble with hyperparameter tuning to predict cinema store sales — end-to-end from preprocessing to CSV submission.</p>
+            <div class="project-tech-stack">
+              <span class="project-tech-stack-tag">Python</span>
+              <span class="project-tech-stack-tag">Scikit-learn</span>
+              <span class="project-tech-stack-tag">Pandas</span>
+              <span class="project-tech-stack-tag">Jupyter Notebook</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Cinema-Audience-Forecasting" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
@@ -3923,199 +3938,218 @@
       </div>
       <div class="filter-bar" role="tablist" aria-label="Certificate categories">
         <button class="filter-button active" data-filter="all" type="button">All</button>
-        <button class="filter-button" data-filter="Degrees" type="button">Degrees</button>
-        <button class="filter-button" data-filter="Programming" type="button">Programming</button>
-        <button class="filter-button" data-filter="Hackathons" type="button">Hackathons</button>
-        <button class="filter-button" data-filter="Cloud" type="button">Cloud</button>
-        <button class="filter-button" data-filter="Soft Skills" type="button">Soft Skills</button>
-        <button class="filter-button" data-filter="Extra-curricular" type="button">Extra-curricular</button>
+        <button class="filter-button" data-filter="academic" type="button">Academic</button>
+        <button class="filter-button" data-filter="internships" type="button">Internships</button>
+        <button class="filter-button" data-filter="soft-skills" type="button">Soft Skills</button>
+        <button class="filter-button" data-filter="competitions" type="button">Competitions</button>
+        <button class="filter-button" data-filter="extra-activity" type="button">Extra Activity</button>
       </div>
       <div class="certificates-grid" id="certificateGrid">
-        <article class="certificate-card" data-category="Degrees" data-title="Diploma in Programming" data-issuer="Indian Institute of Technology Madras" data-year="30th December 2024" data-image="Certificates/Diploma%20in%20Programming-1.png">
+        <!-- ACADEMIC -->
+        <article class="certificate-card" data-category="academic" data-title="Diploma in Programming" data-issuer="Indian Institute of Technology Madras" data-year="30th December 2024" data-image="Certificates/Diploma%20in%20Programming-1.png">
           <div class="certificate-thumb">
             <img src="Certificates/Diploma%20in%20Programming-1.png" alt="Diploma in Programming">
           </div>
           <div class="certificate-info">
             <span class="cert-badge">Programming</span>
             <h3>Diploma in Programming</h3>
-            <p>Completed the requirements for the Diploma in Programming.</p>
             <div class="cert-meta">IIT Madras &middot; Dec 2024</div>
+            <p>Completed IIT Madras's rigorous Diploma in Programming, covering data structures, algorithms, and software development fundamentals.</p>
           </div>
         </article>
-        <article class="certificate-card" data-category="Degrees" data-title="Foundational Level in Programming and Data Science" data-issuer="Indian Institute of Technology Madras" data-year="January 2023" data-image="Certificates/Foundation%20Certificate-1.png">
+        <article class="certificate-card" data-category="academic" data-title="Diploma in Data Science" data-issuer="Indian Institute of Technology Madras" data-year="Recent" data-image="Certificates/Diploma%20in%20Data%20Science.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Diploma%20in%20Data%20Science.png" alt="Diploma in Data Science">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Data Science</span>
+            <h3>Diploma in Data Science</h3>
+            <div class="cert-meta">IIT Madras &middot; Sep 2025</div>
+            <p>Earned IIT Madras's Diploma in Data Science, spanning mathematics, machine learning, and real-world data applications.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="academic" data-title="Foundational Level in Programming and Data Science" data-issuer="Indian Institute of Technology Madras" data-year="January 2023" data-image="Certificates/Foundation%20Certificate-1.png">
           <div class="certificate-thumb">
             <img src="Certificates/Foundation%20Certificate-1.png" alt="Foundational Level in Programming and Data Science">
           </div>
           <div class="certificate-info">
             <span class="cert-badge">Data Science</span>
             <h3>Foundational Level in Programming and Data Science</h3>
-            <p>Successfully completed the Foundational Level in Programming and Data Science.</p>
             <div class="cert-meta">IIT Madras &middot; Jan 2023</div>
+            <p>Successfully cleared the foundation tier of IIT Madras's BS program — the first step into structured CS and data science learning.</p>
           </div>
         </article>
-        <article class="certificate-card" data-category="Soft Skills" data-title="Certificate of Appreciation - Leader Group 267" data-issuer="IIT Madras B.S. Degree Program" data-year="September 2023 to August 2024" data-image="Certificates/Group%20Leader-1.png">
-          <div class="certificate-thumb">
-            <img src="Certificates/Group%20Leader-1.png" alt="Certificate of Appreciation - Leader Group 267">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Leadership</span>
-            <h3>Certificate of Appreciation - Leader Group 267</h3>
-            <p>Awarded for outstanding contribution made to the General Student Body as a Group Leader.</p>
-            <div class="cert-meta">IIT Madras &middot; 2023-2024</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Soft Skills" data-title="Guest Speaker - Unlock the Power of Data Science" data-issuer="Marathwada Mitra Mandal's College of Commerce" data-year="07/03/2025" data-image="Certificates/MMCC1.jpeg">
-          <div class="certificate-thumb">
-            <img src="Certificates/MMCC1.jpeg" alt="Guest Speaker - Unlock the Power of Data Science">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Workshop</span>
-            <h3>Guest Speaker - Unlock the Power of Data Science</h3>
-            <p>Served as a guest speaker to conduct a hands-on data science experience and real-life projects implementation session.</p>
-            <div class="cert-meta">MMCC &middot; Mar 2025</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Programming" data-title="Web Development Peer To Peer Session" data-issuer="Google Developer Group, Fergusson College Pune" data-year="29th January 2026" data-image="Certificates/Peer%20To%20Peer%20Session%20.png">
-          <div class="certificate-thumb">
-            <img src="Certificates/Peer%20To%20Peer%20Session%20.png" alt="Web Development Peer To Peer Session">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Workshop</span>
-            <h3>Web Development Peer To Peer Session</h3>
-            <p>Attended the Web Development Peer To Peer session.</p>
-            <div class="cert-meta">GDG Fergusson College &middot; Jan 2026</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Programming" data-title="Certificate of Internship - Web Development" data-issuer="PharmaAI" data-year="January 2025 to February 2025" data-image="Certificates/PharmaAI-1.png">
-          <div class="certificate-thumb">
-            <img src="Certificates/PharmaAI-1.png" alt="Certificate of Internship - Web Development">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Internship</span>
-            <h3>Certificate of Internship - Web Development</h3>
-            <p>Completed a web development internship, focusing on developing and optimizing web applications and enhancing user interfaces.</p>
-            <div class="cert-meta">PharmaAI &middot; Jan-Feb 2025</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Smart India Hackathon 2023" data-issuer="IIT Madras / Ministry of Education" data-year="25th September 2023" data-image="Certificates/Tejas%20Patare-1.png">
-          <div class="certificate-thumb">
-            <img src="Certificates/Tejas%20Patare-1.png" alt="Certificate of Participation - Smart India Hackathon 2023">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Hackathons</span>
-            <h3>Certificate of Participation - Smart India Hackathon 2023</h3>
-            <p>Participated in the Internal Hackathon for SIH 2023 as part of team AyurTech.ai.</p>
-            <div class="cert-meta">IIT Madras &middot; Sep 2023</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Programming" data-title="Internship Completion - Full Stack Development" data-issuer="Sudha Gopalakrishnan Brain Centre, IIT Madras" data-year="02-02-2026 to 31-03-2026" data-image="Certificates/Tejas%20certificate-1.png">
-          <div class="certificate-thumb">
-            <img src="Certificates/Tejas%20certificate-1.png" alt="Internship Completion - Full Stack Development">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Internship</span>
-            <h3>Internship Completion - Full Stack Development</h3>
-            <p>Successfully completed an internship actively involved in the Full Stack Development Team.</p>
-            <div class="cert-meta">SGBC IIT Madras &middot; Feb-Mar 2026</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Cloud" data-title="Understanding Google Cloud Platform" data-issuer="IIT Madras BS Program" data-year="17th January 2025 - 19th January 2025" data-image="Certificates/Understanding%20GCP-1.png">
+        <article class="certificate-card" data-category="academic" data-title="Understanding Google Cloud Platform" data-issuer="IIT Madras BS Program" data-year="17th January 2025 - 19th January 2025" data-image="Certificates/Understanding%20GCP-1.png">
           <div class="certificate-thumb">
             <img src="Certificates/Understanding%20GCP-1.png" alt="Understanding Google Cloud Platform">
           </div>
           <div class="certificate-info">
             <span class="cert-badge">Cloud</span>
             <h3>Understanding Google Cloud Platform</h3>
-            <p>Successfully completed the workshop on Understanding Google Cloud Platform.</p>
             <div class="cert-meta">IIT Madras &middot; Jan 2025</div>
+            <p>Completed a hands-on workshop on Google Cloud Platform fundamentals — compute, storage, and cloud deployment concepts.</p>
           </div>
         </article>
-        <article class="certificate-card" data-category="Cloud" data-title="Implementing AI using Azure" data-issuer="Microsoft Azure" data-year="2024" data-image="Certificates/Implementing%20AI%20using%20Azure-1.png">
+        <article class="certificate-card" data-category="academic" data-title="Implementing AI using Azure" data-issuer="IIT Madras" data-year="2024" data-image="Certificates/Implementing%20AI%20using%20Azure-1.png">
           <div class="certificate-thumb">
             <img src="Certificates/Implementing%20AI%20using%20Azure-1.png" alt="Implementing AI using Azure">
           </div>
           <div class="certificate-info">
             <span class="cert-badge">Cloud</span>
             <h3>Implementing AI using Azure</h3>
-            <p>Successfully completed training on Implementing AI using Microsoft Azure.</p>
-            <div class="cert-meta">Microsoft Azure &middot; 2024</div>
+            <div class="cert-meta">IIT Madras &middot; Jan 2025</div>
+            <p>Trained in building and deploying AI solutions on Microsoft Azure, covering cognitive services and cloud-based ML workflows.</p>
           </div>
         </article>
-        <article class="certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Byte Battle" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(1).png">
+
+        <!-- INTERNSHIPS -->
+        <article class="certificate-card" data-category="internships" data-title="Internship Completion - Full Stack Development" data-issuer="Sudha Gopalakrishnan Brain Centre, IIT Madras" data-year="02-02-2026 to 31-03-2026" data-image="Certificates/Tejas%20certificate-1.png">
           <div class="certificate-thumb">
-            <img src="Certificates/certificate%20(1).png" alt="Certificate of Participation - Byte Battle">
+            <img src="Certificates/Tejas%20certificate-1.png" alt="Internship Completion - Full Stack Development">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Internship</span>
+            <h3>Internship Completion - Full Stack Development</h3>
+            <div class="cert-meta">SGBC IIT Madras &middot; Feb-Mar 2026</div>
+            <p>Built production ML models integrated into web apps using Flask, Vue.js, and PostgreSQL during an onsite internship at IIT Madras.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="internships" data-title="Certificate of Internship - Web Development" data-issuer="PharmaAI" data-year="January 2025 to February 2025" data-image="Certificates/PharmaAI-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/PharmaAI-1.png" alt="Certificate of Internship - Web Development">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Internship</span>
+            <h3>Certificate of Internship - Web Development</h3>
+            <div class="cert-meta">PharmaAI &middot; Jan-Feb 2025</div>
+            <p>Built PharmaAI's professional web presence from scratch. Designed and developed their website to effectively showcase the company online.</p>
+          </div>
+        </article>
+
+        <!-- SOFT SKILLS -->
+        <article class="certificate-card" data-category="soft-skills" data-title="Certificate of Appreciation - Leader Group 267" data-issuer="IIT Madras B.S. Degree Program" data-year="September 2023 to August 2024" data-image="Certificates/Group%20Leader-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Group%20Leader-1.png" alt="Certificate of Appreciation - Leader Group 267">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Leadership</span>
+            <h3>Certificate of Appreciation - Leader Group 267</h3>
+            <div class="cert-meta">IIT Madras &middot; 2023-2024</div>
+            <p>Awarded for outstanding contribution as Group Leader 267, managing and supporting a student cohort within the IIT Madras BS program.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="soft-skills" data-title="Web Development Peer To Peer Session" data-issuer="Google Developer Group, Fergusson College Pune" data-year="29th January 2026" data-image="Certificates/Peer%20To%20Peer%20Session%20.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Peer%20To%20Peer%20Session%20.png" alt="Web Development Peer To Peer Session">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Workshop</span>
+            <h3>Web Development Peer To Peer Session</h3>
+            <div class="cert-meta">GDG Fergusson College &middot; Jan 2026</div>
+            <p>Conducted a peer-to-peer web development session for fellow students as part of GDGoC Fergusson College's learning initiatives.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="soft-skills" data-title="Guest Speaker - Unlock the Power of Data Science" data-issuer="Marathwada Mitra Mandal's College of Commerce" data-year="07/03/2025" data-image="Certificates/MMCC1.jpeg">
+          <div class="certificate-thumb">
+            <img src="Certificates/MMCC1.jpeg" alt="Guest Speaker - Unlock the Power of Data Science">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Workshop</span>
+            <h3>Guest Speaker - Unlock the Power of Data Science</h3>
+            <div class="cert-meta">MMCC &middot; Mar 2025</div>
+            <p>Delivered a hands-on data science session at MMCC, guiding students through real-life project implementation and industry applications.</p>
+          </div>
+        </article>
+
+        <!-- COMPETITIONS -->
+        <article class="certificate-card" data-category="competitions" data-title="Certificate of Participation - Smart India Hackathon 2023" data-issuer="IIT Madras / Ministry of Education" data-year="25th September 2023" data-image="Certificates/Tejas%20Patare-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/Tejas%20Patare-1.png" alt="Certificate of Participation - Smart India Hackathon 2023">
           </div>
           <div class="certificate-info">
             <span class="cert-badge">Hackathons</span>
-            <h3>Certificate of Participation - Byte Battle</h3>
-            <p>Recognized for active participation in Byte Battle at IITM Paradox'23.</p>
-            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+            <h3>Certificate of Participation - Smart India Hackathon 2023</h3>
+            <div class="cert-meta">IIT Madras &middot; Sep 2023</div>
+            <p>Represented IIT Madras as part of team AyurTech.ai in the internal hackathon for SIH 2023.</p>
           </div>
         </article>
-        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Squid Game" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(2).png">
-          <div class="certificate-thumb">
-            <img src="Certificates/certificate%20(2).png" alt="Certificate of Participation - Squid Game">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Extra-curricular</span>
-            <h3>Certificate of Participation - Squid Game</h3>
-            <p>Recognized for active participation in Squid Game at IITM Paradox'23.</p>
-            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Paradox Premier League" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(3).png">
-          <div class="certificate-thumb">
-            <img src="Certificates/certificate%20(3).png" alt="Certificate of Participation - Paradox Premier League">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Extra-curricular</span>
-            <h3>Certificate of Participation - Paradox Premier League</h3>
-            <p>Recognized for active participation in Paradox Premier League at IITM Paradox'23.</p>
-            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Badminton" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(4).png">
-          <div class="certificate-thumb">
-            <img src="Certificates/certificate%20(4).png" alt="Certificate of Participation - Badminton">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Extra-curricular</span>
-            <h3>Certificate of Participation - Badminton</h3>
-            <p>Recognized for active participation in Badminton at IITM Paradox'23.</p>
-            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Extra-curricular" data-title="Certificate of Participation - Slow Cycling" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(5).png">
-          <div class="certificate-thumb">
-            <img src="Certificates/certificate%20(5).png" alt="Certificate of Participation - Slow Cycling">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Extra-curricular</span>
-            <h3>Certificate of Participation - Slow Cycling</h3>
-            <p>Recognized for active participation in Slow Cycling at IITM Paradox'23.</p>
-            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Programming" data-title="Certificate of Appreciation - Python Coding Challenge" data-issuer="IITM B.S. Degree Program" data-year="2024" data-image="Certificates/certificate-1.png">
-          <div class="certificate-thumb">
-            <img src="Certificates/certificate-1.png" alt="Certificate of Appreciation - Python Coding Challenge">
-          </div>
-          <div class="certificate-info">
-            <span class="cert-badge">Programming</span>
-            <h3>Certificate of Appreciation - Python Coding Challenge</h3>
-            <p>Active participation in Python Coding Challenge at IITM Paradox in Margazhi'24.</p>
-            <div class="cert-meta">IITM Margazhi'24 &middot; 2024</div>
-          </div>
-        </article>
-        <article class="certificate-card" data-category="Hackathons" data-title="Certificate of Participation - Hack-O-Pitch 2.0" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate.png">
+        <article class="certificate-card" data-category="competitions" data-title="Certificate of Participation - Hack-O-Pitch 2.0" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate.png">
           <div class="certificate-thumb">
             <img src="Certificates/certificate.png" alt="Certificate of Participation - Hack-O-Pitch 2.0">
           </div>
           <div class="certificate-info">
             <span class="cert-badge">Hackathons</span>
             <h3>Certificate of Participation - Hack-O-Pitch 2.0</h3>
-            <p>Recognized for active participation in Hack-O-Pitch 2.0 at IITM Paradox'23.</p>
             <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+            <p>Participated in Hack-O-Pitch 2.0, a hackathon-style pitching competition at IITM Paradox'23.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="competitions" data-title="Certificate of Participation - Byte Battle" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(1).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(1).png" alt="Certificate of Participation - Byte Battle">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Hackathons</span>
+            <h3>Certificate of Participation - Byte Battle</h3>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+            <p>Competed in Byte Battle, a DSA-focused coding competition testing algorithmic problem-solving under pressure.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="competitions" data-title="Certificate of Appreciation - Python Coding Challenge" data-issuer="IITM B.S. Degree Program" data-year="2024" data-image="Certificates/certificate-1.png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate-1.png" alt="Certificate of Appreciation - Python Coding Challenge">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Programming</span>
+            <h3>Certificate of Appreciation - Python Coding Challenge</h3>
+            <div class="cert-meta">IITM Margazhi'24 &middot; 2024</div>
+            <p>Recognized for active participation in the Python Coding Challenge at IITM's Margazhi'24 fest.</p>
+          </div>
+        </article>
+
+        <!-- EXTRA ACTIVITY -->
+        <article class="certificate-card" data-category="extra-activity" data-title="Certificate of Participation - Squid Game" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(2).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(2).png" alt="Certificate of Participation - Squid Game">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Squid Game</h3>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+            <p>Participated in the Squid Game fun event at IITM Paradox'23.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="extra-activity" data-title="Certificate of Participation - Paradox Premier League" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(3).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(3).png" alt="Certificate of Participation - Paradox Premier League">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Paradox Premier League</h3>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+            <p>Took part in the Paradox Premier League sports event at IITM Paradox'23.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="extra-activity" data-title="Certificate of Participation - Badminton" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(4).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(4).png" alt="Certificate of Participation - Badminton">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Badminton</h3>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+            <p>Participated in the Badminton competition at IITM Paradox'23.</p>
+          </div>
+        </article>
+        <article class="certificate-card" data-category="extra-activity" data-title="Certificate of Participation - Slow Cycling" data-issuer="IITM BS Degree Program" data-year="2023" data-image="Certificates/certificate%20(5).png">
+          <div class="certificate-thumb">
+            <img src="Certificates/certificate%20(5).png" alt="Certificate of Participation - Slow Cycling">
+          </div>
+          <div class="certificate-info">
+            <span class="cert-badge">Extra-curricular</span>
+            <h3>Certificate of Participation - Slow Cycling</h3>
+            <div class="cert-meta">IITM Paradox'23 &middot; 2023</div>
+            <p>Participated in the Slow Cycling event at IITM Paradox'23.</p>
           </div>
         </article>
       </section>
