@@ -3640,7 +3640,7 @@
           <div class="project-body">
             <h3>FocusSprint – Study & Productivity Tracker</h3>
             <p>A productivity tracker designed for students preparing for exams and technical interviews. It helps users stay focused using timed study sessions, daily streak tracking, phone distraction counting, and focus analytics.</p>
-            <div class="project-tech-stack">React &middot; Django &middot; PostgreSQL &middot; JavaScript</div>
+            <div class="project-tech-stack">Flask &middot; HTML &middot; JavaScript &middot; SQLite</div>
           
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Spec-Driven-Developement/tree/sdd_submission" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -3654,7 +3654,7 @@
           <div class="project-body">
             <h3>Shramik Setu – Worker Hiring Platform</h3>
             <p>A worker hiring platform where employers can post jobs and workers can apply easily. The platform supports role-based access, secure login, and streamlined communication between workers and employers.</p>
-            <div class="project-tech-stack">Django &middot; JavaScript &middot; HTML/CSS &middot; SQLite</div>
+            <div class="project-tech-stack">Django &middot; React &middot; JavaScript &middot; HTML/CSS &middot; SQLite</div>
           
             <div class="project-links">
               <a href="https://github.com/Tejas-34/Shramik-Setu" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -3721,6 +3721,199 @@
           </div>
         </article>
       </div>
+    </section>
+
+    <section class="reveal" id="skills" style="position: relative; overflow: hidden; padding: 0 0 40px;">
+      <style>
+        #skills {
+          position: relative;
+        }
+
+        .skills-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          max-width: 1100px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+          padding: 0 20px;
+        }
+        .skill-node {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 80px;
+          height: 80px;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          cursor: pointer;
+          position: relative;
+          text-decoration: none;
+        }
+        .skill-node:hover {
+          transform: translateY(-5px) scale(1.1);
+          z-index: 10;
+        }
+        .skill-node img, .skill-node i {
+          width: 56px;
+          height: 56px;
+          font-size: 56px;
+          object-fit: contain;
+          margin-bottom: 8px;
+          filter: drop-shadow(0 0 6px rgba(255,255,255,0.1));
+          transition: all 0.4s;
+        }
+        .skill-node:hover img, .skill-node:hover i {
+          transform: scale(1.15);
+          filter: drop-shadow(0 0 12px var(--glow-color));
+          color: white !important;
+        }
+        .skill-name {
+          font-size: 11px;
+          color: rgba(255,255,255,0.45);
+          font-weight: 500;
+          white-space: nowrap;
+          transition: color 0.3s;
+        }
+        .skill-node:hover .skill-name {
+          color: white;
+        }
+
+    
+        /* Floating Animations */
+        @keyframes float-1 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+        @keyframes float-2 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+        @keyframes float-3 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        
+        .skill-node:not(:hover) {
+          animation: float-1 6s ease-in-out infinite;
+        }
+        .skill-node:nth-child(2n):not(:hover) {
+          animation: float-2 5s ease-in-out infinite;
+          animation-delay: -1s;
+        }
+        .skill-node:nth-child(3n):not(:hover) {
+          animation: float-3 7s ease-in-out infinite;
+          animation-delay: -2.5s;
+        }
+        .skill-node.center-node:not(:hover) {
+          animation: float-2 8s ease-in-out infinite;
+        }
+    
+        /* Responsive */
+        @media (max-width: 768px) {
+          .skills-container { gap: 1rem; }
+          .skill-node { width: 90px; height: 90px; }
+          .skill-node img, .skill-node i { width: 32px; height: 32px; font-size: 32px; }
+          .skill-name { font-size: 0.65rem; }
+
+        }
+
+
+      </style>
+    
+      <div class="section-heading">
+        <span class="section-kicker">Skills</span>
+      </div>
+    
+      <div class="skills-container">
+        <!-- Languages & Core -->
+        <div class="skill-node" style="--glow-color: #3776AB;">
+          <img src="https://cdn.simpleicons.org/python" alt="Python">
+          <span class="skill-name">Python</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #F7DF1E;">
+          <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript">
+          <span class="skill-name">JavaScript</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #E34F26;">
+          <i class="fa-brands fa-html5" style="color: var(--glow-color);"></i>
+          <span class="skill-name">HTML5</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #1572B6;">
+          <i class="fa-brands fa-css3-alt" style="color: var(--glow-color);"></i>
+          <span class="skill-name">CSS3</span>
+        </div>
+    
+        <!-- Frontend -->
+        <div class="skill-node" style="--glow-color: #4FC08D;">
+          <img src="https://cdn.simpleicons.org/vuedotjs" alt="Vue.js">
+          <span class="skill-name">Vue.js</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #61DAFB;">
+          <img src="https://cdn.simpleicons.org/react" alt="React.js">
+          <span class="skill-name">React.js</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #06B6D4;">
+          <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS">
+          <span class="skill-name">Tailwind</span>
+        </div>
+        
+
+    
+        <!-- Backend & DB -->
+        <div class="skill-node" style="--glow-color: #10B981;">
+          <img src="https://cdn.simpleicons.org/django" alt="Django">
+          <span class="skill-name">Django</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #ffffff;">
+          <img src="https://cdn.simpleicons.org/flask/white" alt="Flask">
+          <span class="skill-name">Flask</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #4169E1;">
+          <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL">
+          <span class="skill-name">PostgreSQL</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #4479A1;">
+          <img src="https://cdn.simpleicons.org/mysql" alt="MySQL">
+          <span class="skill-name">MySQL</span>
+        </div>
+        
+        <!-- Data & Tools -->
+        <div class="skill-node" style="--glow-color: #FF6F00;">
+          <i class="fa-solid fa-brain" style="color: var(--glow-color);"></i>
+          <span class="skill-name">Machine Learning</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #F05032;">
+          <img src="https://cdn.simpleicons.org/git" alt="Git">
+          <span class="skill-name">Git</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #FCC624;">
+          <img src="https://cdn.simpleicons.org/linux" alt="Linux">
+          <span class="skill-name">Linux</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #4285F4;">
+          <img src="https://cdn.simpleicons.org/googlecloud" alt="GCP">
+          <span class="skill-name">GCP</span>
+        </div>
+        
+        <!-- Others -->
+        <div class="skill-node" style="--glow-color: #FF6C37;">
+          <img src="https://cdn.simpleicons.org/postman" alt="Postman">
+          <span class="skill-name">Postman</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #9b72ff;">
+          <i class="fa-solid fa-network-wired" style="color: var(--glow-color);"></i>
+          <span class="skill-name">REST APIs</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #38bdf8;">
+          <img src="https://cdn.simpleicons.org/sqlite" alt="SQLite">
+          <span class="skill-name">SQLite</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #7952B3;">
+          <img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap">
+          <span class="skill-name">Bootstrap</span>
+        </div>
+        <div class="skill-node" style="--glow-color: #10B981;">
+          <i class="fa-solid fa-chart-pie" style="color: var(--glow-color);"></i>
+          <span class="skill-name">Data Viz</span>
+        </div>
+      </div>
+
+
     </section>
 
     <section class="reveal" id="certificates">
@@ -4666,10 +4859,10 @@
           "Currently pursuing MSc CS at Fergusson College and BS Data Science at IIT Madras."
         ],
         projects: () => [
-          "1. NeuroStack Portal - Full-stack research tools",
-          "2. PharmaAI Suite - Domain-specific web interfaces",
-          "3. Orbit Commerce - Performance-first storefront",
-          "4. Pulse Analytics - Data-driven dashboard"
+          "1. Sramik Setu - Full-stack web app connecting skilled workers with employers",
+          "2. Focus Sprint - Pomodoro timer with focus, distraction monitoring, and productivity analytics",
+          "3. IESCF - Influence and Sponsor Collboration platform",
+          "4. Cinema Audiance Forcasting - A machine learning project designed to predict audience turnout and sales patterns"
         ],
         journey: () => [
           "2025 - Present: MSc Computer Science, Fergusson College",
